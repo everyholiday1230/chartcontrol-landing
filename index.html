@@ -3,219 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChartControl — AI Trading Terminal · Partner Program</title>
-<meta name="description" content="AI-native trading terminal. Free points for your members, 20% recurring KuCoin fees for you.">
+<title>ChartControl — Partner Program · 20% recurring</title>
+<meta name="description" content="AI chart analysis software. Your members get free points, you keep 20% of KuCoin fees — recurring, stacking on any existing referral deals.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg:#070B12;--bg2:#0A0F1A;--panel:#0C1322;--panel2:#0F1626;--line:rgba(148,163,184,.14);
-  --up:#2FBF71;--down:#E5484D;--amber:#F5B84D;--blue:#7FB4FF;
-  --text:#E9EEF6;--muted:#8D99AC;--dim:#5E6B7E;
-}
+:root{--paper:#F4F1EA;--paper2:#EDE9DF;--ink:#171412;--rust:#A64B2A;--rust-dark:#8A3B1F;--ok:#2E7D4F;--line:rgba(23,20,18,.14);--muted:#6B6459;--card:#FBF9F4;--cyan:#2E9BD6;--pink:#D6659C;--teal:#39B3A6}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:'IBM Plex Sans',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{background:var(--paper);color:var(--ink);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit}
-a:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
-.wrap{max-width:1120px;margin:0 auto;padding:0 28px}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rust);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px}
 .mono{font-family:'IBM Plex Mono',monospace}
-.eyebrow{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.24em;color:var(--amber);text-transform:uppercase;display:flex;align-items:center;gap:12px}
-.eyebrow::after{content:"";height:1px;flex:0 0 46px;background:var(--amber);opacity:.5}
-/* header */
-header.site{position:sticky;top:0;z-index:20;background:rgba(7,11,18,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-header .bar{display:flex;align-items:center;justify-content:space-between;height:62px}
-.brand{font-family:'Space Grotesk';font-weight:700;font-size:19px;text-decoration:none;display:flex;align-items:baseline;gap:10px}
-.brand b{color:var(--up);font-weight:700}
-.brand .tag{font-family:'IBM Plex Mono';font-size:10px;letter-spacing:.28em;color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:3px 9px}
-nav.top{display:flex;gap:26px;align-items:center}
-nav.top a{font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted);text-decoration:none;letter-spacing:.04em}
-nav.top a:hover{color:var(--text)}
-nav.top .cta{color:#04130A;background:var(--up);border-radius:6px;padding:8px 14px;font-weight:500}
-nav.top .cta:hover{background:#38d17f;color:#04130A}
+.stripe{background:var(--ink);color:#F4F1EA;font-family:'IBM Plex Mono';font-size:11.5px;letter-spacing:.06em}
+.stripe .wrap{display:flex;justify-content:space-between;gap:16px;padding:9px 28px;flex-wrap:wrap}
+.stripe b{color:#E8B98A;font-weight:500;letter-spacing:.14em}
+.stripe .r{opacity:.75}
+header.site{border-bottom:1px solid var(--line);background:rgba(244,241,234,.9);backdrop-filter:blur(8px);position:sticky;top:0;z-index:20}
+header .bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.mark{width:30px;height:30px;border-radius:8px;color:#fff;display:grid;place-items:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;background-image:linear-gradient(135deg,var(--cyan),var(--teal) 45%,var(--pink))}
+.brand .nm{font-weight:600;font-size:16px}
+.brand .ver{font-family:'IBM Plex Mono';font-size:10px;color:var(--muted);border:1px solid var(--line);border-radius:99px;padding:2px 8px}
+nav.top{display:flex;gap:22px;align-items:center}
+nav.top a{font-size:13.5px;color:var(--muted);text-decoration:none}
+nav.top a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:9px;padding:11px 20px;font-size:14px;font-weight:600;text-decoration:none;border:1px solid transparent;cursor:pointer;transition:transform .12s ease}
+.btn.dark{background:var(--ink);color:#F4F1EA}
+.btn.dark:hover{transform:translateY(-1px)}
+.btn.rust{background:var(--rust);color:#fff}
+.btn.rust:hover{transform:translateY(-1px);background:var(--rust-dark)}
+.btn.ghost{border-color:rgba(23,20,18,.25);color:var(--ink)}
+.btn.ghost:hover{border-color:var(--ink)}
 /* hero */
-.hero{position:relative;padding:84px 0 72px;border-bottom:1px solid var(--line);
- background:
-  radial-gradient(900px 480px at 82% -10%, rgba(47,191,113,.09), transparent 60%),
-  radial-gradient(700px 420px at -8% 110%, rgba(245,184,77,.05), transparent 60%),
-  repeating-linear-gradient(0deg, transparent 0 79px, rgba(148,163,184,.045) 79px 80px),
-  repeating-linear-gradient(90deg, transparent 0 79px, rgba(148,163,184,.045) 79px 80px);}
-.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
-@media(max-width:940px){.hero .grid{grid-template-columns:1fr;gap:44px}}
-h1{font-family:'Space Grotesk';font-weight:700;font-size:clamp(34px,4.6vw,56px);line-height:1.08;letter-spacing:-.015em;margin-top:22px}
-h1 .up{color:var(--up)}
-h1 .amb{color:var(--amber)}
-.lede{margin-top:20px;color:var(--muted);font-size:17px;max-width:520px}
-.lede strong{color:var(--text);font-weight:600}
-.cta-row{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
-.btn{display:inline-flex;align-items:center;gap:9px;font-family:'IBM Plex Mono';font-size:14px;padding:14px 24px;border-radius:7px;text-decoration:none;border:1px solid transparent;transition:transform .12s ease,filter .12s ease}
-.btn.primary{background:var(--up);color:#04130A;font-weight:500}
-.btn.primary:hover{transform:translateY(-1px);filter:brightness(1.08)}
-.btn.ghost{border-color:rgba(148,163,184,.3);color:var(--text)}
-.btn.ghost:hover{border-color:var(--muted)}
-.trust{margin-top:22px;font-family:'IBM Plex Mono';font-size:12.5px;color:var(--dim);display:flex;gap:18px;flex-wrap:wrap}
+.hero{padding:76px 0 66px;border-bottom:1px solid var(--line);background:
+ radial-gradient(760px 420px at 88% -6%, rgba(166,75,42,.09), transparent 62%),
+ radial-gradient(640px 380px at -6% 108%, rgba(46,125,79,.07), transparent 60%)}
+.hero .grid{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}
+@media(max-width:940px){.hero .grid{grid-template-columns:1fr;gap:42px}}
+.kicker{font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.24em;color:var(--rust);text-transform:uppercase;display:flex;align-items:center;gap:12px}
+.kicker::after{content:"";height:1px;width:46px;background:var(--rust);opacity:.5}
+h1{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(33px,4.4vw,54px);line-height:1.1;letter-spacing:-.012em;margin-top:20px}
+h1 em{font-style:italic;color:var(--rust)}
+h1 .g{color:var(--ok)}
+.lede{margin-top:18px;color:var(--muted);font-size:17px;max-width:520px}
+.lede strong{color:var(--ink);font-weight:600}
+.cta-row{margin-top:28px;display:flex;gap:13px;flex-wrap:wrap}
+.trust{margin-top:20px;font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap}
 .trust span{display:inline-flex;gap:7px;align-items:center}
-.trust i{width:6px;height:6px;border-radius:50%;background:var(--up);display:inline-block}
-.trust .a i{background:var(--amber)}
-/* terminal card — signature */
-.terminal{border:1px solid rgba(148,163,184,.2);border-radius:12px;background:linear-gradient(180deg,var(--panel),var(--panel2));box-shadow:0 30px 70px rgba(0,0,0,.55);overflow:hidden}
-.term-bar{display:flex;gap:7px;align-items:center;padding:12px 16px;border-bottom:1px solid var(--line);background:rgba(255,255,255,.02)}
-.term-bar i{width:10px;height:10px;border-radius:50%;background:rgba(148,163,184,.25)}
-.term-bar .ttl{font-family:'IBM Plex Mono';font-size:12px;color:var(--muted);margin-left:10px}
-.term-bar .live{margin-left:auto;font-family:'IBM Plex Mono';font-size:10.5px;color:var(--up);display:flex;align-items:center;gap:6px}
-.term-bar .live::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--up);animation:pulse 1.6s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-.term-body{padding:18px 16px 16px}
-svg.candles{width:100%;height:auto;display:block}
-.feed{margin-top:14px;display:grid;gap:9px}
-.sig{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);background:rgba(255,255,255,.02);border-radius:8px;padding:11px 13px;opacity:0;animation:slidein .55s ease forwards}
-.sig:nth-child(1){animation-delay:2.0s}
-.sig:nth-child(2){animation-delay:2.45s}
-.sig:nth-child(3){animation-delay:2.9s}
-@keyframes slidein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-.sig .dot{width:8px;height:8px;border-radius:50%;margin-top:6px;flex:none}
-.sig .g{background:var(--up)}.sig .a{background:var(--amber)}.sig .b{background:var(--blue)}
-.sig .t{font-family:'IBM Plex Mono';font-size:12.5px;line-height:1.5}
-.sig .t small{display:block;color:var(--dim);font-size:11px}
-/* ticker */
-.ticker{border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;white-space:nowrap}
-.ticker .lane{display:inline-block;padding:11px 0;font-family:'IBM Plex Mono';font-size:12.5px;color:var(--muted);animation:mq 34s linear infinite}
-@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-.ticker b{color:var(--text);font-weight:500}
-.ticker .u{color:var(--up)}.ticker .d{color:var(--down)}.ticker .s{color:var(--amber)}
-/* sections */
-section{padding:76px 0;border-bottom:1px solid var(--line)}
-h2{font-family:'Space Grotesk';font-size:clamp(26px,3.4vw,38px);font-weight:700;letter-spacing:-.012em;margin-top:16px}
-.sub{color:var(--muted);margin-top:12px;max-width:620px}
-.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.trust i{width:6px;height:6px;border-radius:50%;background:var(--ok);display:inline-block}
+/* offer cards */
+section{padding:72px 0;border-bottom:1px solid var(--line)}
+h2{font-family:'Fraunces',serif;font-weight:600;font-size:clamp(26px,3.3vw,38px);letter-spacing:-.01em;margin-top:14px}
+.sub{color:var(--muted);margin-top:10px;max-width:640px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
 @media(max-width:880px){.grid3{grid-template-columns:1fr}}
-.card{border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,var(--panel),rgba(12,19,34,.6));padding:26px;position:relative;transition:border-color .15s ease,transform .15s ease}
-.card:hover{border-color:rgba(47,191,113,.4);transform:translateY(-3px)}
+.card{border:1px solid var(--line);border-radius:12px;background:var(--card);padding:26px;transition:transform .15s ease,border-color .15s ease}
+.card:hover{transform:translateY(-3px);border-color:rgba(166,75,42,.4)}
 .card .k{font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.2em;text-transform:uppercase}
-.k.c-mem{color:var(--up)}.k.c-you{color:var(--amber)}.k.c-collab{color:var(--blue)}
-.card h3{font-family:'Space Grotesk';font-size:20px;margin:12px 0 8px}
+.k.cm{color:var(--ok)}.k.cy{color:var(--rust)}.k.cb{color:#2E7BB0}
+.card h3{font-family:'Fraunces',serif;font-size:21px;margin:11px 0 8px;font-weight:600}
 .card p{color:var(--muted);font-size:15px}
-.card p b{color:var(--text);font-weight:600}
-.stack-note{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;font-size:14px;color:var(--muted)}
-.stack-note b{color:var(--amber);font-weight:600}
+.card p b{color:var(--ink);font-weight:600}
+.stack{margin-top:14px;border-top:1px dashed var(--line);padding-top:12px;font-size:14px;color:var(--muted)}
+.stack b{color:var(--rust);font-weight:600}
 /* steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:52px;position:relative}
-@media(max-width:880px){.steps{grid-template-columns:1fr 1fr;row-gap:34px}}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px}
+@media(max-width:880px){.steps{grid-template-columns:1fr 1fr;row-gap:32px}}
 @media(max-width:560px){.steps{grid-template-columns:1fr}}
 .step{padding:0 22px 0 0;position:relative}
-.step::before{content:attr(data-n);font-family:'IBM Plex Mono';font-size:12px;color:var(--up);letter-spacing:.2em}
-.step::after{content:"";position:absolute;top:34px;left:0;right:22px;height:1px;background:linear-gradient(90deg,rgba(47,191,113,.55),rgba(47,191,113,.06))}
+.step::before{content:attr(data-n);font-family:'IBM Plex Mono';font-size:11.5px;color:var(--rust);letter-spacing:.2em}
+.step::after{content:"";position:absolute;top:32px;left:0;right:22px;height:1px;background:linear-gradient(90deg,rgba(166,75,42,.5),rgba(166,75,42,.06))}
 @media(max-width:880px){.step::after{display:none}}
-.step b{display:block;font-family:'Space Grotesk';font-size:17.5px;margin:14px 0 8px}
+.step b{display:block;font-family:'Fraunces',serif;font-size:17.5px;margin:13px 0 7px;font-weight:600}
 .step span{color:var(--muted);font-size:14.5px}
-/* feature rows */
-.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+/* tech — 실제 기능 */
+.feat{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:42px}
 @media(max-width:880px){.feat{grid-template-columns:1fr}}
 .feat .card{padding:22px}
-.feat svg{width:42px;height:42px;margin-bottom:14px}
-/* cta band */
-.band{border:none;background:
- radial-gradient(700px 300px at 20% 0%, rgba(47,191,113,.12), transparent 65%),
- radial-gradient(700px 300px at 90% 100%, rgba(245,184,77,.08), transparent 65%)}
-.band .inner{border:1px solid rgba(47,191,113,.28);border-radius:16px;padding:52px 48px;display:flex;justify-content:space-between;align-items:center;gap:32px;background:rgba(12,19,34,.5)}
-@media(max-width:820px){.band .inner{flex-direction:column;align-items:flex-start;padding:38px 28px}}
+.feat svg{width:40px;height:40px;margin-bottom:12px}
+.feat h3{font-family:'Fraunces',serif;font-size:19px;margin:0 0 6px;font-weight:600}
+/* stats */
+.stats{background:var(--ink);color:#F4F1EA}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding:38px 28px}
+@media(max-width:820px){.stats .wrap{grid-template-columns:1fr 1fr}}
+.stat .v{font-family:'Fraunces',serif;font-size:34px;font-weight:600}
+.stat .v.g{color:#7FC79A}
+.stat .l{font-family:'IBM Plex Mono';font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(244,241,234,.6);margin-top:4px}
+/* band */
+.band{border-bottom:1px solid var(--line)}
+.band .inner{border:1px solid rgba(166,75,42,.3);border-radius:16px;padding:48px 44px;display:flex;justify-content:space-between;align-items:center;gap:30px;background:linear-gradient(135deg,rgba(166,75,42,.06),rgba(46,125,79,.05))}
+@media(max-width:820px){.band .inner{flex-direction:column;align-items:flex-start;padding:36px 26px}}
 .band h2{margin-top:8px}
-/* footer */
-footer.site{padding:52px 0 68px;color:var(--muted);font-size:14.5px}
-footer .cols{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
-footer .mono{font-size:12.5px}
-footer a{color:var(--text)}
-.legal{margin-top:26px;font-size:12.5px;color:var(--dim);max-width:760px;border-top:1px solid var(--line);padding-top:18px}
-@media(prefers-reduced-motion:reduce){.sig{animation:none;opacity:1}.lane{animation:none}.term-bar .live::before{animation:none}}
+footer{padding:44px 0 60px;color:var(--muted);font-size:13px}
+footer .cols{display:flex;justify-content:space-between;gap:36px;flex-wrap:wrap}
+footer a{color:var(--ink)}
+.legal{margin-top:22px;font-size:12px;color:rgba(107,100,89,.8);max-width:800px;border-top:1px solid var(--line);padding-top:16px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
 <body>
 
+<div class="stripe">
+  <div class="wrap">
+    <span><b>SOFTWARE, NOT A BROKER.</b>&nbsp; We never hold your members' funds — trades run on their own exchange accounts.</span>
+    <span class="r">No withdrawal permissions requested · Ever</span>
+  </div>
+</div>
+
 <header class="site">
   <div class="wrap bar">
-    <a class="brand" href="#">Chart<b>Control</b><span class="tag">AI&nbsp;TERMINAL</span></a>
+    <a class="brand" href="https://chartcontrol.onrender.com"><span class="mark">Q</span><span class="nm">ChartControl</span><span class="ver">v1.0</span></a>
     <nav class="top">
-      <a href="#offer">Offer</a><a href="#how">How it works</a><a href="#ai">The AI</a>
-      <a class="cta" href="mailto:nuhye1031@gmail.com?subject=Partnership%20inquiry%20%E2%80%94%20ChartControl">Become a partner</a>
+      <a href="#offer">The Offer</a><a href="#how">How it works</a><a href="#tech">The Tech</a>
+      <a class="btn dark" href="mailto:nuhye1031@gmail.com?subject=Partnership%20inquiry%20%E2%80%94%20ChartControl" style="padding:9px 16px">Become a partner</a>
     </nav>
   </div>
 </header>
 
-<div class="ticker" aria-hidden="true">
-  <div class="lane">
-    <span>&nbsp;BTC/USDT 67,412 <b class="u">▲2.31%</b>&nbsp;&nbsp;·&nbsp;&nbsp;ETH/USDT 3,488 <b class="u">▲1.12%</b>&nbsp;&nbsp;·&nbsp;&nbsp;SOL/USDT 172.4 <b class="d">▼0.84%</b>&nbsp;&nbsp;·&nbsp;&nbsp;<b class="s">AI SIGNAL</b> momentum shift · BTC 4H&nbsp;&nbsp;·&nbsp;&nbsp;<b class="s">AI SIGNAL</b> volume confirms · ETH 1D&nbsp;&nbsp;·&nbsp;&nbsp;XRP/USDT 0.612 <b class="u">▲0.44%</b>&nbsp;&nbsp;·&nbsp;&nbsp;<b class="s">AI SIGNAL</b> trend strength rising · SOL 4H&nbsp;&nbsp;·&nbsp;&nbsp;BTC/USDT 67,412 <b class="u">▲2.31%</b>&nbsp;&nbsp;·&nbsp;&nbsp;ETH/USDT 3,488 <b class="u">▲1.12%</b>&nbsp;&nbsp;·&nbsp;&nbsp;SOL/USDT 172.4 <b class="d">▼0.84%</b>&nbsp;&nbsp;·&nbsp;&nbsp;<b class="s">AI SIGNAL</b> momentum shift · BTC 4H&nbsp;&nbsp;·&nbsp;&nbsp;<b class="s">AI SIGNAL</b> volume confirms · ETH 1D&nbsp;&nbsp;·&nbsp;&nbsp;XRP/USDT 0.612 <b class="u">▲0.44%</b>&nbsp;&nbsp;·&nbsp;&nbsp;<b class="s">AI SIGNAL</b> trend strength rising · SOL 4H&nbsp;&nbsp;</span>
-  </div>
-</div>
-
 <div class="hero">
   <div class="wrap grid">
     <div>
-      <div class="eyebrow">Partnership program · community owners &amp; creators</div>
-      <h1>Your members trade the chart.<br>You keep <span class="up">20%</span> of the fees.<br><span class="amb">Forever compounding.</span></h1>
-      <p class="lede"><strong>ChartControl is an AI company.</strong> Our terminal reads the chart so your community doesn't have to — live AI chart analysis, trade signals and indicator breakdowns, with a KuCoin-connected workflow.</p>
+      <div class="kicker">Partnership program · community owners &amp; creators</div>
+      <h1>Your members get the AI.<br>You keep <em>20% of the fees.</em><br>Everyone sees <span class="g">the same chart.</span></h1>
+      <p class="lede"><strong>ChartControl is an AI company.</strong> Our terminal reads charts so your community doesn't have to — live AI chart analysis, trade signals and indicator breakdowns, on their own exchange accounts.</p>
       <div class="cta-row">
-        <a class="btn primary" href="https://chartcontrol.onrender.com" target="_blank" rel="noopener">Open the live demo</a>
-        <a class="btn ghost" href="mailto:nuhye1031@gmail.com?subject=Partnership%20inquiry%20%E2%80%94%20ChartControl">Partner with us</a>
+        <a class="btn rust" href="mailto:nuhye1031@gmail.com?subject=Partnership%20inquiry%20%E2%80%94%20ChartControl">Partner with us</a>
+        <a class="btn ghost" href="https://chartcontrol.onrender.com" target="_blank" rel="noopener">Open the live demo</a>
       </div>
       <div class="trust">
         <span><i></i>KuCoin broker partner</span>
-        <span class="a"><i></i>No calls — email &amp; Telegram only</span>
+        <span><i></i>No calls — email &amp; Telegram only</span>
       </div>
     </div>
-
-    <div class="terminal" role="img" aria-label="Terminal mockup: candlestick chart with AI signal feed">
-      <div class="term-bar"><i></i><i></i><i></i><span class="ttl">BTC/USDT · 4H</span><span class="live">LIVE AI</span></div>
-      <div class="term-body">
-        <svg class="candles" viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <g stroke="rgba(148,163,184,.08)"><line x1="0" y1="48" x2="560" y2="48"/><line x1="0" y1="96" x2="560" y2="96"/><line x1="0" y1="144" x2="560" y2="144"/><line x1="0" y1="192" x2="560" y2="192"/></g>
-          <g stroke="#2FBF71" fill="rgba(47,191,113,.16)" stroke-width="1.3">
-            <line x1="26" y1="196" x2="26" y2="158"/><rect x="19" y="164" width="14" height="28" rx="1"/>
-            <line x1="66" y1="180" x2="66" y2="140"/><rect x="59" y="146" width="14" height="30" rx="1"/>
-            <line x1="106" y1="168" x2="106" y2="130"/><rect x="99" y="136" width="14" height="26" rx="1"/>
-            <line x1="186" y1="160" x2="186" y2="118"/><rect x="179" y="124" width="14" height="32" rx="1"/>
-            <line x1="266" y1="144" x2="266" y2="100"/><rect x="259" y="106" width="14" height="34" rx="1"/>
-            <line x1="346" y1="126" x2="346" y2="80"/><rect x="339" y="86" width="14" height="36" rx="1"/>
-            <line x1="466" y1="98" x2="466" y2="46"/><rect x="459" y="52" width="14" height="42" rx="1"/>
-            <line x1="526" y1="82" x2="526" y2="34"/><rect x="519" y="40" width="14" height="40" rx="1"/>
-          </g>
-          <g stroke="#E5484D" fill="rgba(229,72,77,.16)" stroke-width="1.3">
-            <line x1="146" y1="148" x2="146" y2="120"/><rect x="139" y="126" width="14" height="18" rx="1"/>
-            <line x1="226" y1="132" x2="226" y2="106"/><rect x="219" y="110" width="14" height="16" rx="1"/>
-            <line x1="306" y1="110" x2="306" y2="88"/><rect x="299" y="92" width="14" height="14" rx="1"/>
-            <line x1="406" y1="92" x2="406" y2="66"/><rect x="399" y="70" width="14" height="16" rx="1"/>
-          </g>
-          <path style="stroke-dasharray:900;stroke-dashoffset:900;animation:dash 2s ease-out .3s forwards" d="M26 178 L66 160 L106 148 L146 136 L186 124 L226 114 L266 100 L306 88 L346 76 L406 64 L466 48 L526 36" fill="none" stroke="#F5B84D" stroke-width="2.2" stroke-linecap="round"/>
-          <style>@keyframes dash{to{stroke-dashoffset:0}}</style>
-        </svg>
-        <div class="feed">
-          <div class="sig"><span class="dot g"></span><span class="t">Momentum shift detected · BTC/USDT 4H<small>trend strength rising — volume confirms</small></span></div>
-          <div class="sig"><span class="dot a"></span><span class="t">RSI 61.8 · bullish zone<small>MACD cross forming · watch 67,800</small></span></div>
-          <div class="sig"><span class="dot b"></span><span class="t">Indicator summary ready<small>3 bullish · 1 neutral · risk 6.2/10</small></span></div>
-        </div>
+    <div class="card" style="padding:30px">
+      <div class="k cy" style="margin-bottom:14px">The partnership in one card</div>
+      <div style="display:grid;gap:14px;font-size:15px">
+        <div style="display:flex;gap:11px"><span style="color:var(--ok);font-weight:600">Members</span><span style="color:var(--muted)">Free points on signup · <b style="color:var(--ink)">2×</b> points on paid plans · full AI analysis from day one</span></div>
+        <div style="display:flex;gap:11px"><span style="color:var(--rust);font-weight:600">You</span><span style="color:var(--muted)"><b style="color:var(--ink)">20% of KuCoin fees</b> your members generate — recurring, tracked, paid to you</span></div>
+        <div style="display:flex;gap:11px"><span style="color:#2E7BB0;font-weight:600">Together</span><span style="color:var(--muted)">Joint chart-analysis sessions — and a separate revenue share for the content</span></div>
       </div>
+      <div class="stack">Already running referral deals with another exchange? <b>Keep them — this is extra income that stacks on top.</b></div>
     </div>
   </div>
 </div>
 
 <section id="offer">
   <div class="wrap">
-    <div class="eyebrow">The offer</div>
+    <div class="kicker">The offer</div>
     <h2>Three-way value. One partnership.</h2>
-    <p class="sub">Members get AI analysis for free. You get a revenue engine. We build together.</p>
+    <p class="sub">Members get the AI for free. You get a recurring revenue engine. We build the content together.</p>
     <div class="grid3">
       <div class="card">
-        <div class="k c-mem">For your members</div>
+        <div class="k cm">For your members</div>
         <h3>Free points, instant access</h3>
         <p>Every member who signs up through your link gets <b>free points</b> — full AI chart analysis and signals from day one. Paid plans earn <b>2× points</b>.</p>
       </div>
       <div class="card">
-        <div class="k c-you">For you</div>
+        <div class="k cy">For you</div>
         <h3>20% recurring, not one-off</h3>
         <p>Members sign up via your partner link, deposit on KuCoin and trade — you earn <b>20% of their trading fees</b>, continuously, tracked in a dashboard.</p>
-        <div class="stack-note">Already running referral deals with another exchange? <b>Keep them — this is extra income that stacks on top.</b></div>
+        <div class="stack">Existing referral deals? <b>Keep them — this stacks on top.</b></div>
       </div>
       <div class="card">
-        <div class="k c-collab">With you</div>
+        <div class="k cb">With you</div>
         <h3>Joint analysis sessions</h3>
         <p>We run joint chart-analysis sessions with your community — live or recorded — and can design an <b>additional revenue-share</b> around the content itself.</p>
       </div>
@@ -225,7 +177,7 @@ footer a{color:var(--text)}
 
 <section id="how">
   <div class="wrap">
-    <div class="eyebrow">How it works</div>
+    <div class="kicker">How it works</div>
     <h2>From partner link to monthly payout</h2>
     <div class="steps">
       <div class="step" data-n="STEP 01"><b>You get a partner link</b><span>Unique to your community — every signup and every fee is attributed to you.</span></div>
@@ -236,62 +188,65 @@ footer a{color:var(--text)}
   </div>
 </section>
 
-<section id="ai">
+<section id="tech">
   <div class="wrap">
-    <div class="eyebrow">What the AI does</div>
+    <div class="kicker">The tech your members will touch</div>
     <h2>Built for people who live on charts</h2>
     <div class="feat">
       <div class="card">
-        <svg viewBox="0 0 44 44" fill="none" stroke="#2FBF71" stroke-width="2" stroke-linecap="round"><path d="M4 34 L14 22 L22 28 L32 14 L40 18"/><circle cx="32" cy="14" r="2.6" fill="#F5B84D" stroke="none"/></svg>
-        <h3>Real-time chart analysis</h3>
-        <p>Structure, momentum and trend reads on live markets — BTC, majors and alts — delivered as plain-language calls.</p>
+        <svg viewBox="0 0 44 44" fill="none" stroke="#A64B2A" stroke-width="2" stroke-linecap="round"><path d="M4 34 L14 22 L22 28 L32 14 L40 18"/><circle cx="32" cy="14" r="2.6" fill="#2E7D4F" stroke="none"/></svg>
+        <h3>AI Copilot on the chart</h3>
+        <p>Momentum shifts, trend reads and setups marked directly on screen — plain-language reasoning attached, never black-box numbers.</p>
       </div>
       <div class="card">
-        <svg viewBox="0 0 44 44" fill="none" stroke="#F5B84D" stroke-width="2" stroke-linecap="round"><path d="M6 30 h10 M6 22 h16 M6 14 h9"/><path d="M28 26 l6 6 8-14" stroke="#2FBF71"/></svg>
-        <h3>Trade signals</h3>
-        <p>Momentum shifts and setups flagged on the chart with the reasoning attached — not black-box numbers.</p>
+        <svg viewBox="0 0 44 44" fill="none" stroke="#2E7BB0" stroke-width="2" stroke-linecap="round"><rect x="5" y="10" width="34" height="24" rx="3"/><path d="M11 26l6-6 5 4 8-9" stroke="#2E7D4F"/></svg>
+        <h3>Indicators &amp; drawing tools</h3>
+        <p>RSI, MACD, volume profiles and the full drawing toolkit — the AI explains what each reading means for the current setup, in one line.</p>
       </div>
       <div class="card">
-        <svg viewBox="0 0 44 44" fill="none" stroke="#7FB4FF" stroke-width="2" stroke-linecap="round"><rect x="6" y="24" width="6" height="12"/><rect x="17" y="16" width="6" height="20"/><rect x="28" y="8" width="6" height="28"/><path d="M4 20 Q22 2 40 18" stroke="#E5484D"/></svg>
-        <h3>Indicator breakdowns</h3>
-        <p>RSI, MACD, volume profiles — the AI explains what each reading means for the current setup, in one line.</p>
+        <svg viewBox="0 0 44 44" fill="none" stroke="#2E7D4F" stroke-width="2" stroke-linecap="round"><rect x="5" y="5" width="10" height="10" rx="2"/><rect x="19" y="5" width="10" height="10" rx="2"/><rect x="5" y="19" width="10" height="10" rx="2"/><rect x="19" y="19" width="10" height="10" rx="2"/><path d="M33 8l6 6-6 6M39 14h-9" stroke="#A64B2A"/></svg>
+        <h3>Custom 24-column layout</h3>
+        <p>Bloomberg-grade information density with a fully customizable workspace — 660+ USDT perpetual pairs, live market data, multi-language UI.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section class="band">
+<div class="stats">
+  <div class="wrap">
+    <div class="stat"><div class="v">660+</div><div class="l">Trading Pairs</div></div>
+    <div class="stat"><div class="v">KuCoin</div><div class="l">Exchange Supported</div></div>
+    <div class="stat"><div class="v g">0</div><div class="l">Funds We Custody</div></div>
+    <div class="stat"><div class="v g">0</div><div class="l">Withdrawal Permissions</div></div>
+  </div>
+</div>
+
+<section class="band" style="border-bottom:none">
   <div class="wrap">
     <div class="inner">
       <div>
-        <div class="eyebrow">Next step</div>
+        <div class="kicker">Next step</div>
         <h2>Put your community on the chart.</h2>
-        <p class="sub" style="margin-top:10px">One reply starts it. The partnership one-pager, point codes and your partner link go out the same day.</p>
+        <p class="sub" style="margin-top:8px">One reply starts it — the partnership one-pager, point codes and your partner link go out the same day.</p>
       </div>
       <div class="cta-row" style="margin-top:0">
-        <a class="btn primary" href="mailto:nuhye1031@gmail.com?subject=Partnership%20inquiry%20%E2%80%94%20ChartControl">Partner with us</a>
+        <a class="btn rust" href="mailto:nuhye1031@gmail.com?subject=Partnership%20inquiry%20%E2%80%94%20ChartControl">Partner with us</a>
         <a class="btn ghost" href="https://chartcontrol.onrender.com" target="_blank" rel="noopener">Try the demo</a>
       </div>
     </div>
   </div>
 </section>
 
-<footer class="site">
+<footer>
   <div class="wrap">
-    <div class="cols">
-      <div>
-        <div class="eyebrow" style="margin-bottom:14px">Contact</div>
-        <p>No calls. Email or Telegram only — we reply within a day.</p>
-        <p class="mono" style="margin-top:10px">Partnerships: <a href="mailto:nuhye1031@gmail.com?subject=Partnership%20inquiry%20%E2%80%94%20ChartControl">nuhye1031@gmail.com</a></p>
-        <p class="mono">Demo: <a href="https://chartcontrol.onrender.com" target="_blank" rel="noopener">chartcontrol.onrender.com</a></p>
-      </div>
-      <div style="text-align:right">
-        <div class="mono" style="color:var(--dim);font-size:12px;letter-spacing:.2em">CHARTCONTROL</div>
-        <div class="mono" style="color:var(--dim);font-size:12px">AI TRADING TERMINAL</div>
-      </div>
+    <div>
+      <div class="kicker" style="margin-bottom:12px">Contact</div>
+      <p>No calls. Email or Telegram only — we reply within a day.</p>
+      <p class="mono" style="margin-top:8px">Partnerships: <a href="mailto:nuhye1031@gmail.com?subject=Partnership%20inquiry%20%E2%80%94%20ChartControl">nuhye1031@gmail.com</a> · Demo: <a href="https://chartcontrol.onrender.com" target="_blank" rel="noopener">chartcontrol.onrender.com</a></p>
     </div>
-    <p class="legal">ChartControl AI · This page is a business partnership inquiry channel, not a newsletter. If you received a partnership email and prefer not to be contacted again, reply "no thanks" and your address is removed permanently. Market data shown is illustrative, not live pricing. Nothing here is financial advice.</p>
+    <div class="mono" style="color:var(--muted);font-size:12px;text-align:right">CHARTCONTROL<br>AI CHART ANALYSIS SOFTWARE</div>
   </div>
+  <div class="wrap"><p class="legal">ChartControl AI · This page is a business partnership inquiry channel, not a newsletter. If you received a partnership email and prefer not to be contacted again, reply "no thanks" and your address is removed permanently. Pair count reflects KuCoin USDT perpetual listings at time of writing. Market data shown in previews is illustrative. Nothing here is financial advice.</p></div>
 </footer>
 
 </body>
