@@ -175,7 +175,7 @@
       "last.cta_ghost":  "Read our partner terms",
       // footer
       "foot.body":"<b>ChartControl is an AI product for chart-based decision making.</b> It is not an exchange or investment adviser, and nothing on this page is financial advice. Orders execute on your own exchange account. Trading involves risk of loss. Any product preview shown on this site is illustrative and is not a market forecast or a record of results.",
-      "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+      "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
       "foot.product":"Product",
       "foot.terminal":"Open the terminal",
       "foot.pricing":"Pricing",
@@ -291,7 +291,7 @@
     "last.lede":"가입은 1분이고 무료 포인트는 즉시 도착합니다. 취향에 안 맞아도 잃을 것이 없습니다 — 데모는 열려 있고, 모든 주문은 우리가 아닌 당신 계정에서 실행됩니다.",
     "last.cta_primary":"무료로 시작 — 포인트 받기","last.cta_ghost":"파트너 조건 보기",
     "foot.body":"<b>ChartControl은 차트 기반 의사결정을 위한 AI 제품입니다.</b> 거래소나 투자 자문이 아니며, 이 페이지의 어떤 내용도 금융 자문이 아닙니다. 주문은 당신의 자기 거래소 계정에서 실행됩니다. 거래에는 손실 위험이 있습니다. 이 사이트에 표시된 모든 제품 미리보기는 예시이며 시장 예측이나 결과 기록이 아닙니다.",
-    "foot.copy":"© 2026 범온누리이노베이션 주식회사 · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"제품","foot.terminal":"터미널 열기","foot.pricing":"요금","foot.exchanges":"거래소 커버리지","foot.partners":"파트너 프로그램",
     "foot.company":"회사","foot.about":"소개","foot.contact":"연락",
     "foot.legal":"법적 고지","foot.terms":"약관","foot.privacy":"개인정보","foot.security":"보안"
@@ -390,7 +390,7 @@
     "last.lede":"登録は 1 分、無料ポイントは即座に届きます。あなたに合わなくても失うものはありません — デモは開かれており、すべての注文は私たちではなくあなたの口座で実行されます。",
     "last.cta_primary":"無料で始める — ポイントを受け取る","last.cta_ghost":"パートナー条件を読む",
     "foot.body":"<b>ChartControl はチャートベースの意思決定のための AI プロダクトです。</b> 取引所や投資顧問ではなく、このページのいかなる内容も金融アドバイスではありません。注文はあなた自身の取引所口座で実行されます。取引には損失リスクがあります。本サイトに表示されるすべてのプロダクトプレビューは例示であり、市場予測や結果記録ではありません。",
-    "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"プロダクト","foot.terminal":"ターミナルを開く","foot.pricing":"料金","foot.exchanges":"取引所カバレッジ","foot.partners":"パートナープログラム",
     "foot.company":"会社","foot.about":"会社概要","foot.contact":"お問い合わせ",
     "foot.legal":"法的事項","foot.terms":"利用規約","foot.privacy":"プライバシー","foot.security":"セキュリティ"
@@ -489,7 +489,7 @@
     "last.lede":"注册一分钟,免费积分即时到账。不合适也没什么损失 — 演示是开放的,每一单都在你的账户上执行,不在我们这。",
     "last.cta_primary":"免费开始 — 领取积分","last.cta_ghost":"阅读合作条款",
     "foot.body":"<b>ChartControl 是一款服务图表决策的 AI 产品。</b>不是交易所,也不是投资顾问,页面上没有任何内容构成金融建议。订单在你自己的交易所账户上执行。交易存在损失风险。本网站展示的任何产品预览都是示意,不是市场预测或业绩记录。",
-    "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"产品","foot.terminal":"打开终端","foot.pricing":"价格","foot.exchanges":"交易所覆盖","foot.partners":"合作伙伴计划",
     "foot.company":"公司","foot.about":"关于","foot.contact":"联系",
     "foot.legal":"法律","foot.terms":"条款","foot.privacy":"隐私","foot.security":"安全"
@@ -587,7 +587,7 @@
     "last.lede":"Kayıt bir dakika sürer ve ücretsiz puanlar anında düşer. Size uymazsa kaybınız yok — demo açık ve her emir bizim değil sizin hesabınızda çalışır.",
     "last.cta_primary":"Ücretsiz başla — puanlarını al","last.cta_ghost":"Partner koşullarını okuyun",
     "foot.body":"<b>ChartControl grafiğe dayalı karar için bir AI ürünüdür.</b> Borsa veya yatırım danışmanı değildir ve bu sayfadaki hiçbir şey finansal tavsiye değildir. Emirler kendi borsa hesabınızda yürütülür. Trading kayıp riski taşır. Bu sitede gösterilen ürün önizlemeleri örnektir, piyasa tahmini veya sonuç kaydı değildir.",
-    "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"Ürün","foot.terminal":"Terminali aç","foot.pricing":"Fiyat","foot.exchanges":"Borsa kapsamı","foot.partners":"Partner programı",
     "foot.company":"Şirket","foot.about":"Hakkında","foot.contact":"İletişim",
     "foot.legal":"Yasal","foot.terms":"Şartlar","foot.privacy":"Gizlilik","foot.security":"Güvenlik"
@@ -685,7 +685,7 @@
     "last.lede":"Đăng ký mất một phút và điểm miễn phí đến ngay. Nếu không hợp, bạn cũng không mất gì — demo mở và mọi lệnh chạy trên tài khoản của bạn, không phải của chúng tôi.",
     "last.cta_primary":"Bắt đầu miễn phí — nhận điểm","last.cta_ghost":"Đọc điều khoản đối tác",
     "foot.body":"<b>ChartControl là sản phẩm AI phục vụ ra quyết định dựa trên biểu đồ.</b> Không phải sàn giao dịch hay cố vấn đầu tư, và không có gì trên trang này là tư vấn tài chính. Lệnh được thực thi trên chính tài khoản sàn của bạn. Giao dịch có rủi ro thua lỗ. Mọi bản xem trước sản phẩm hiển thị trên trang này chỉ mang tính minh họa, không phải dự báo thị trường hay ghi nhận kết quả.",
-    "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"Sản phẩm","foot.terminal":"Mở terminal","foot.pricing":"Giá","foot.exchanges":"Phạm vi sàn","foot.partners":"Chương trình đối tác",
     "foot.company":"Công ty","foot.about":"Giới thiệu","foot.contact":"Liên hệ",
     "foot.legal":"Pháp lý","foot.terms":"Điều khoản","foot.privacy":"Quyền riêng tư","foot.security":"Bảo mật"
@@ -783,7 +783,7 @@
     "last.lede":"Registrarse toma un minuto y los puntos gratis caen al instante. Si no es para ti, nada se pierde — la demo está abierta y cada orden corre en tu cuenta, no en la nuestra.",
     "last.cta_primary":"Empieza gratis — obtén tus puntos","last.cta_ghost":"Leer los términos de partner",
     "foot.body":"<b>ChartControl es un producto de IA para la toma de decisiones basada en gráficos.</b> No es un exchange ni un asesor de inversiones y nada en esta página es asesoramiento financiero. Las órdenes se ejecutan en tu propia cuenta del exchange. Operar implica riesgo de pérdida. Cualquier vista previa del producto mostrada en este sitio es ilustrativa y no un pronóstico de mercado ni un registro de resultados.",
-    "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"Producto","foot.terminal":"Abrir el terminal","foot.pricing":"Precios","foot.exchanges":"Cobertura de exchanges","foot.partners":"Programa de partners",
     "foot.company":"Empresa","foot.about":"Acerca","foot.contact":"Contacto",
     "foot.legal":"Legal","foot.terms":"Términos","foot.privacy":"Privacidad","foot.security":"Seguridad"
@@ -881,7 +881,7 @@
     "last.lede":"Cadastrar leva um minuto e os pontos grátis caem na hora. Se não for pra você, nada foi perdido — a demo está aberta e cada ordem roda na sua conta, não na nossa.",
     "last.cta_primary":"Comece grátis — receba seus pontos","last.cta_ghost":"Ler os termos de parceria",
     "foot.body":"<b>ChartControl é um produto de IA para tomada de decisão baseada em gráficos.</b> Não é uma exchange nem consultor de investimento e nada nesta página é orientação financeira. Ordens são executadas na sua própria conta da exchange. Operar envolve risco de perda. Qualquer prévia de produto mostrada neste site é ilustrativa e não uma previsão de mercado ou registro de resultados.",
-    "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"Produto","foot.terminal":"Abrir o terminal","foot.pricing":"Preços","foot.exchanges":"Cobertura de exchanges","foot.partners":"Programa de parceiros",
     "foot.company":"Empresa","foot.about":"Sobre","foot.contact":"Contato",
     "foot.legal":"Legal","foot.terms":"Termos","foot.privacy":"Privacidade","foot.security":"Segurança"
@@ -979,7 +979,7 @@
     "last.lede":"Регистрация занимает минуту, бесплатные очки приходят мгновенно. Если не зайдёт — терять нечего: демо открыта, а каждый ордер идёт на твоём счёте, не на нашем.",
     "last.cta_primary":"Начать бесплатно — получить очки","last.cta_ghost":"Читать партнёрские условия",
     "foot.body":"<b>ChartControl — ИИ-продукт для принятия решений на основе графика.</b> Это не биржа и не инвестиционный советник, и ничто на этой странице не является финансовым советом. Ордера исполняются на твоём собственном счёте биржи. Торговля несёт риск убытков. Любые превью продукта на сайте иллюстративны и не являются прогнозом рынка или записью результатов.",
-    "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"Продукт","foot.terminal":"Открыть терминал","foot.pricing":"Цены","foot.exchanges":"Покрытие бирж","foot.partners":"Партнёрская программа",
     "foot.company":"Компания","foot.about":"О нас","foot.contact":"Контакты",
     "foot.legal":"Юридическое","foot.terms":"Условия","foot.privacy":"Приватность","foot.security":"Безопасность"
@@ -1077,7 +1077,7 @@
     "last.lede":"Anmeldung dauert eine Minute und kostenlose Punkte landen sofort. Wenn's nichts für dich ist, ist nichts verloren — die Demo ist offen und jede Order läuft auf deinem Konto, nicht auf unserem.",
     "last.cta_primary":"Kostenlos starten — Punkte holen","last.cta_ghost":"Partnerbedingungen lesen",
     "foot.body":"<b>ChartControl ist ein KI-Produkt für chartbasierte Entscheidungen.</b> Keine Börse, kein Anlageberater und nichts auf dieser Seite ist Finanzberatung. Orders werden auf deinem eigenen Börsenkonto ausgeführt. Trading beinhaltet Verlustrisiko. Jede auf dieser Seite gezeigte Produktvorschau ist illustrativ und keine Marktprognose oder Erfolgsbilanz.",
-    "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"Produkt","foot.terminal":"Terminal öffnen","foot.pricing":"Preise","foot.exchanges":"Börsen-Abdeckung","foot.partners":"Partnerprogramm",
     "foot.company":"Unternehmen","foot.about":"Über uns","foot.contact":"Kontakt",
     "foot.legal":"Rechtliches","foot.terms":"AGB","foot.privacy":"Datenschutz","foot.security":"Sicherheit"
@@ -1175,7 +1175,7 @@
     "last.lede":"L'inscription prend une minute et les points gratuits tombent instantanément. Si ce n'est pas pour vous, rien de perdu — la démo est ouverte et chaque ordre tourne sur votre compte, pas le nôtre.",
     "last.cta_primary":"Commencer gratuitement — recevoir vos points","last.cta_ghost":"Lire les conditions partenaires",
     "foot.body":"<b>ChartControl est un produit IA pour la décision basée sur le graphique.</b> Ce n'est pas une bourse ni un conseiller en investissement, et rien sur cette page n'est un conseil financier. Les ordres s'exécutent sur votre propre compte de bourse. Le trading comporte un risque de perte. Toute prévisualisation produit sur ce site est illustrative et n'est pas une prévision de marché ni un enregistrement de résultats.",
-    "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"Produit","foot.terminal":"Ouvrir le terminal","foot.pricing":"Tarifs","foot.exchanges":"Couverture des bourses","foot.partners":"Programme partenaires",
     "foot.company":"Entreprise","foot.about":"À propos","foot.contact":"Contact",
     "foot.legal":"Légal","foot.terms":"Conditions","foot.privacy":"Confidentialité","foot.security":"Sécurité"
@@ -1273,7 +1273,7 @@
     "last.lede":"يستغرق التسجيل دقيقة، والنقاط المجانية تصل فورًا. إن لم يناسبك، لا خسارة — العرض التجريبي مفتوح وكل أمر يعمل على حسابك، لا حسابنا.",
     "last.cta_primary":"ابدأ مجانًا — احصل على نقاطك","last.cta_ghost":"اقرأ شروط الشركاء",
     "foot.body":"<b>ChartControl منتج ذكاء اصطناعي لصنع قرارات تعتمد على الرسم البياني.</b> ليس بورصة ولا مستشارًا استثماريًا، ولا شيء في هذه الصفحة يعدّ نصيحة مالية. تُنفَّذ الأوامر على حسابك الخاص في البورصة. ينطوي التداول على مخاطر خسارة. أي معاينة للمنتج معروضة هنا توضيحية وليست تنبؤًا بالسوق أو سجلًا للنتائج.",
-    "foot.copy":"© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com",
+    "foot.copy":"© 2026 ChartControl AI · chartcontrol.onrender.com",
     "foot.product":"المنتج","foot.terminal":"افتح المحطة","foot.pricing":"الأسعار","foot.exchanges":"تغطية البورصات","foot.partners":"برنامج الشركاء",
     "foot.company":"الشركة","foot.about":"حول","foot.contact":"تواصل",
     "foot.legal":"قانوني","foot.terms":"الشروط","foot.privacy":"الخصوصية","foot.security":"الأمان"
