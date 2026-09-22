@@ -1,0 +1,1471 @@
+<!doctype html>
+<html lang="en" dir="ltr" data-lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ChartControl — Partner Programme · Recurring revenue share, compounding for years</title>
+<meta name="description" content="ChartControl is an AI company for people who live on charts. Partners earn a recurring 10-20% revenue share, settled monthly, for as long as attributed members trade. Live on KuCoin — Bitget and Bybit coming soon. Talk on Telegram @Chartcontrolai.">
+<link rel="canonical" href="https://chartcontrol.onrender.com/partners">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ChartControl">
+<meta property="og:title" content="ChartControl — Partner Programme · The compounding partnership">
+<meta property="og:description" content="Recurring 10-20% revenue share. Monthly settlement. AI chart intelligence built by an AI company. Live on KuCoin — Bitget and Bybit next.">
+<meta property="og:url" content="https://chartcontrol.onrender.com/partners">
+<meta property="og:image" content="assets/og-partners.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ChartControl — Partner Programme · The compounding partnership">
+<meta name="twitter:description" content="Recurring 10-20% revenue share, monthly settlement, for as long as attributed members trade.">
+<meta name="twitter:image" content="assets/og-partners.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+Arabic:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!--
+  Pre-paint language detection — sets <html data-lang>, <html lang> and <html dir>
+  before the first frame paints so the Korean/Arabic user does not see an English flash.
+  The full runtime (partners-i18n.js + partners-app.js) still swaps the visible text —
+  this snippet only guarantees the html-level attributes are correct up-front.
+-->
+<script>
+(function(){
+  var SUPPORTED = ['en','ko','ja','zh','tr','vi','es','pt','ru','de','fr','ar'];
+  var RTL = {ar:1};
+  var lang = null;
+  try { var s = localStorage.getItem('cc_partners_lang'); if (s && SUPPORTED.indexOf(s) !== -1) lang = s; } catch(e){}
+  if (!lang) {
+    try {
+      var q = new URLSearchParams(location.search).get('lang');
+      if (q && SUPPORTED.indexOf(q.toLowerCase()) !== -1) lang = q.toLowerCase();
+    } catch(e){}
+  }
+  if (!lang) {
+    var langs = (navigator.languages && navigator.languages.length)
+      ? navigator.languages
+      : [navigator.language || navigator.userLanguage || 'en'];
+    for (var i = 0; i < langs.length; i++) {
+      var raw = String(langs[i] || '').toLowerCase();
+      if (raw.indexOf('zh') === 0) { lang = 'zh'; break; }
+      var two = raw.slice(0, 2);
+      if (SUPPORTED.indexOf(two) !== -1) { lang = two; break; }
+    }
+  }
+  if (!lang) lang = 'en';
+  var html = document.documentElement;
+  html.setAttribute('data-lang', lang);
+  html.setAttribute('lang', lang);
+  html.setAttribute('dir', RTL[lang] ? 'rtl' : 'ltr');
+})();
+</script>
+
+<style>
+/* =========================================================================
+ * ChartControl Partners · brand tokens
+ * ---------------------------------------------------------------------- */
+:root{
+  --paper:#F4F1EA;     --paper-2:#EDE9DF;     --paper-3:#E4DFCF;
+  --ink:#171412;       --ink-2:#2A2622;       --muted:#6B6459;    --faint:#948B7C;
+  --rust:#A64B2A;      --rust-dark:#8A3B1F;   --rust-tint:#F0DBCC;
+  --ok:#2E7D4F;        --ok-dark:#20603A;     --ok-tint:#D8EAD9;
+  --azure:#2E7BB0;     --azure-tint:#D6E7F3;
+  --amber:#B8711A;     --amber-tint:#F5E4C6;
+  --line:rgba(23,20,18,.14);
+  --line-2:rgba(23,20,18,.07);
+  --card:#FBF9F4;      --card-2:#F8F5EC;
+  --term:#0E1219;      --term-2:#080C13;      --term-line:rgba(148,163,184,.14);   --term-muted:#8D99AC;
+  --gain:#43D98A;      --loss:#F08A8A;        --amber-live:#F5B84D;
+  --font-serif:'Fraunces', ui-serif, Georgia, 'Times New Roman', serif;
+  --font-sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono:'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --wrap:1200px;
+  --pad:32px;
+}
+[data-lang="ar"]{
+  --font-sans:'Noto Sans Arabic','Inter', system-ui, sans-serif;
+  --font-serif:'Noto Sans Arabic', ui-serif, serif;
+}
+[data-lang="ko"]{ --font-sans:'Inter','Noto Sans KR',system-ui,sans-serif; --font-serif:'Fraunces','Noto Sans KR',serif; }
+[data-lang="ja"]{ --font-sans:'Inter','Noto Sans JP',system-ui,sans-serif; --font-serif:'Fraunces','Noto Sans JP',serif; }
+[data-lang="zh"]{ --font-sans:'Inter','Noto Sans SC',system-ui,sans-serif; --font-serif:'Fraunces','Noto Sans SC',serif; }
+
+*,*::before,*::after{box-sizing:border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}
+html,body{margin:0; padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper); color:var(--ink-2);
+  font-family:var(--font-sans);
+  font-size:16px; line-height:1.62;
+  font-feature-settings:"kern","liga","calt","ss01";
+  overflow-x:hidden;
+}
+img,svg{display:block; max-width:100%}
+a{color:inherit; text-decoration:none}
+button{font:inherit; cursor:pointer; background:none; border:none; color:inherit; padding:0}
+input,select,textarea{font:inherit}
+.mono{font-family:var(--font-mono); font-feature-settings:"tnum","zero"}
+.serif{font-family:var(--font-serif)}
+.wrap{max-width:var(--wrap); margin:0 auto; padding:0 var(--pad)}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* =========================================================================
+ * Compliance stripe (top-of-page)
+ * ---------------------------------------------------------------------- */
+.stripe{
+  background:linear-gradient(90deg, var(--ink) 0%, #22201C 100%);
+  color:#EFEAE0; font-family:var(--font-mono); font-size:11.5px; letter-spacing:.05em;
+}
+.stripe .wrap{display:flex; align-items:center; gap:22px; padding:9px var(--pad); flex-wrap:wrap}
+.stripe .dot{width:5px; height:5px; border-radius:50%; background:var(--amber-live); flex:none; box-shadow:0 0 0 3px rgba(245,184,77,.12)}
+.stripe b{color:#F0D9AA; font-weight:600; letter-spacing:.12em}
+.stripe .sep{opacity:.35}
+
+/* =========================================================================
+ * Nav
+ * ---------------------------------------------------------------------- */
+nav.site{
+  position:sticky; top:0; z-index:60;
+  background:rgba(244,241,234,.86);
+  backdrop-filter:saturate(160%) blur(14px);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+nav.site .bar{display:flex; align-items:center; gap:28px; height:66px}
+.brand{display:flex; align-items:center; gap:11px; text-decoration:none}
+.mark{
+  width:32px; height:32px; border-radius:8px; flex:none;
+  display:grid; place-items:center;
+  background:linear-gradient(135deg,#2E9BD6 0%, #39B3A6 45%, #D6659C 100%);
+  color:#fff; font-family:var(--font-serif); font-weight:600; font-size:15px;
+  box-shadow:0 4px 12px rgba(46,155,214,.28), inset 0 1px 0 rgba(255,255,255,.4);
+}
+.brand-name{font-weight:600; font-size:16.5px; letter-spacing:-.005em; color:var(--ink)}
+.brand-ver{font-family:var(--font-mono); font-size:10.5px; padding:2px 7px; border:1px solid var(--line); border-radius:99px; color:var(--muted); letter-spacing:.04em}
+
+.nav-links{display:flex; gap:24px; margin-left:6px}
+.nav-links a{font-size:13.5px; color:var(--muted); transition:color .15s ease}
+.nav-links a:hover{color:var(--ink)}
+.nav-r{margin-left:auto; display:flex; align-items:center; gap:12px}
+
+/* language switcher */
+.lang-wrap{position:relative}
+.lang-btn{
+  display:flex; align-items:center; gap:7px;
+  padding:7px 11px; border-radius:8px;
+  font-family:var(--font-mono); font-size:12px; letter-spacing:.04em;
+  color:var(--ink); border:1px solid var(--line);
+  transition:border-color .15s ease, background .15s ease;
+}
+.lang-btn:hover{border-color:var(--ink); background:rgba(23,20,18,.03)}
+.lang-btn .globe{width:14px; height:14px; opacity:.7}
+.lang-btn .caret{width:10px; height:10px; opacity:.6}
+.lang-menu{
+  position:absolute; top:calc(100% + 6px); right:0;
+  min-width:200px; background:var(--card); border:1px solid var(--line); border-radius:12px;
+  box-shadow:0 20px 46px rgba(23,20,18,.14), 0 2px 6px rgba(23,20,18,.06);
+  padding:6px; display:none; z-index:100;
+  max-height:70vh; overflow-y:auto;
+}
+.lang-menu.open{display:block}
+[dir="rtl"] .lang-menu{right:auto; left:0}
+.lang-menu button{
+  display:flex; align-items:center; gap:10px; width:100%; text-align:left;
+  padding:9px 12px; font-size:13.5px; color:var(--ink); border-radius:7px;
+  transition:background .12s ease;
+}
+[dir="rtl"] .lang-menu button{text-align:right}
+.lang-menu button:hover{background:var(--paper-2)}
+.lang-menu button.on{background:var(--rust); color:#fff}
+.lang-menu button.on .code{color:rgba(255,255,255,.7)}
+.lang-menu .code{font-family:var(--font-mono); font-size:11px; color:var(--faint); margin-left:auto; letter-spacing:.05em}
+[dir="rtl"] .lang-menu .code{margin-left:0; margin-right:auto}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center; gap:8px;
+  font-family:var(--font-sans); font-weight:600; font-size:14px;
+  padding:10px 18px; border-radius:9px; border:1px solid transparent;
+  transition:transform .14s ease, background .14s ease, box-shadow .14s ease, border-color .14s ease;
+  cursor:pointer;
+}
+.btn:hover{transform:translateY(-1px)}
+.btn.primary{background:var(--rust); color:#fff; box-shadow:0 4px 14px rgba(166,75,42,.22)}
+.btn.primary:hover{background:var(--rust-dark); box-shadow:0 8px 22px rgba(166,75,42,.3)}
+.btn.dark{background:var(--ink); color:#F4F1EA}
+.btn.dark:hover{background:#2A2622}
+.btn.ghost{border-color:var(--line); color:var(--ink); background:transparent}
+.btn.ghost:hover{border-color:var(--ink); background:rgba(23,20,18,.03)}
+.btn.lg{padding:14px 24px; font-size:15px}
+.btn .arrow{transition:transform .18s ease}
+.btn:hover .arrow{transform:translateX(3px)}
+[dir="rtl"] .btn:hover .arrow{transform:translateX(-3px) scaleX(-1)}
+[dir="rtl"] .btn .arrow{transform:scaleX(-1)}
+
+/* =========================================================================
+ * Sections base
+ * ---------------------------------------------------------------------- */
+section{padding:88px 0; position:relative}
+section + section{border-top:1px solid var(--line)}
+.section-eyebrow{
+  font-family:var(--font-mono); font-size:11.5px; letter-spacing:.24em;
+  text-transform:uppercase; color:var(--rust); margin-bottom:16px;
+  display:inline-flex; align-items:center; gap:12px;
+}
+.section-eyebrow::before{content:""; width:20px; height:1px; background:var(--rust)}
+h1,h2,h3,h4{margin:0; color:var(--ink); font-family:var(--font-serif); font-weight:600; letter-spacing:-.014em; line-height:1.08; text-wrap:balance}
+h1{font-size:clamp(38px, 5.4vw, 68px); font-weight:600; line-height:1.02}
+h1 em{font-style:italic; color:var(--rust); font-weight:500}
+h1 .highlight{color:var(--ok); font-style:italic; font-weight:500}
+h2{font-size:clamp(30px, 3.6vw, 44px); line-height:1.1; white-space:pre-line}
+h2 em{font-style:italic; color:var(--rust); font-weight:500}
+h3{font-size:20px; letter-spacing:-.01em; line-height:1.28}
+h4{font-size:16px; font-family:var(--font-sans); font-weight:600; letter-spacing:-.005em}
+p{margin:0; text-wrap:pretty}
+.lede{color:var(--muted); font-size:18px; line-height:1.6; max-width:720px; margin-top:14px}
+.lede b, .lede strong{color:var(--ink); font-weight:600}
+
+/* Scroll reveal */
+.reveal{opacity:0; transform:translateY(24px); transition:opacity .8s ease, transform .8s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1; transform:none}
+.reveal.d1{transition-delay:.08s}
+.reveal.d2{transition-delay:.16s}
+.reveal.d3{transition-delay:.24s}
+.reveal.d4{transition-delay:.32s}
+
+/* =========================================================================
+ * Hero
+ * ---------------------------------------------------------------------- */
+.hero{
+  padding:72px 0 90px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(860px 480px at 88% -8%, rgba(166,75,42,.10), transparent 62%),
+    radial-gradient(680px 420px at -6% 108%, rgba(46,125,79,.07), transparent 60%);
+}
+.hero::before{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.5;
+  background-image:
+    linear-gradient(rgba(23,20,18,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23,20,18,.035) 1px, transparent 1px);
+  background-size:56px 56px;
+  mask:radial-gradient(60% 80% at 50% 30%, #000, transparent 82%);
+  -webkit-mask:radial-gradient(60% 80% at 50% 30%, #000, transparent 82%);
+}
+.hero .grid{position:relative; display:grid; grid-template-columns:1.05fr .95fr; gap:56px; align-items:center}
+.hero h1{margin-top:24px}
+.hero .hero-cta{margin-top:32px; display:flex; gap:12px; flex-wrap:wrap}
+.hero .trust{
+  margin-top:26px; padding-top:22px; border-top:1px solid var(--line);
+  display:flex; gap:22px; flex-wrap:wrap;
+  font-family:var(--font-mono); font-size:12.5px; color:var(--muted);
+}
+.hero .trust span{display:inline-flex; align-items:center; gap:8px}
+.hero .trust .pulse{width:7px; height:7px; border-radius:50%; background:var(--ok); position:relative}
+.hero .trust .pulse::after{content:""; position:absolute; inset:-4px; border-radius:50%; border:1px solid var(--ok); animation:pulse 2s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.7); opacity:1} 100%{transform:scale(1.6); opacity:0}}
+
+/* --- Terminal card (right side of hero) --- */
+.termwrap{position:relative; perspective:1600px}
+.termwrap::before{
+  content:""; position:absolute; inset:-30px -18px -10px -18px;
+  background:radial-gradient(70% 70% at 55% 20%, rgba(166,75,42,.18), transparent 70%);
+  filter:blur(20px); z-index:0;
+}
+.terminal{
+  position:relative; z-index:1;
+  border:1px solid rgba(23,20,18,.42); border-radius:16px;
+  background:linear-gradient(180deg, var(--term), var(--term-2));
+  box-shadow:0 36px 90px rgba(16,20,28,.42), 0 2px 6px rgba(16,20,28,.24), inset 0 1px 0 rgba(255,255,255,.05);
+  overflow:hidden; color:#E9EEF6;
+  transform:rotate(-.3deg);
+  transition:transform .5s cubic-bezier(.22,.61,.36,1);
+}
+.terminal:hover{transform:rotate(0deg) translateY(-4px)}
+.tbar{display:flex; align-items:center; gap:8px; padding:12px 16px; border-bottom:1px solid var(--term-line); background:rgba(255,255,255,.02)}
+.tbar i{width:10px; height:10px; border-radius:50%; background:rgba(148,163,184,.22)}
+.tbar .t{font-family:var(--font-mono); font-size:11.5px; color:var(--term-muted); margin-left:10px; letter-spacing:.03em}
+[dir="rtl"] .tbar .t{margin-left:0; margin-right:10px}
+.tbar .live{margin-left:auto; font-family:var(--font-mono); font-size:10px; color:var(--gain); display:flex; gap:6px; align-items:center; letter-spacing:.14em}
+[dir="rtl"] .tbar .live{margin-left:0; margin-right:auto}
+.tbar .live::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--gain); animation:blink 1.4s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+
+.chat{padding:18px 18px 6px; display:grid; gap:10px}
+.q{
+  justify-self:end; max-width:78%;
+  background:rgba(255,255,255,.06); border:1px solid var(--term-line);
+  border-radius:14px 14px 4px 14px; padding:11px 15px; font-size:13.5px; line-height:1.5;
+  color:#E9EEF6;
+  opacity:0; transform:translateY(8px);
+  animation:pop .5s ease .3s forwards;
+}
+.q .caret{display:inline-block; width:6px; height:14px; background:var(--amber-live); vertical-align:-2px; margin-left:2px; animation:blink .7s steps(1) infinite}
+.think{justify-self:start; display:flex; gap:5px; padding:12px 14px; opacity:0; animation:pop .3s ease 1.75s forwards; animation-fill-mode:forwards}
+.think i{width:6px; height:6px; border-radius:50%; background:var(--term-muted); animation:blink 1s ease-in-out infinite}
+.think i:nth-child(2){animation-delay:.15s}
+.think i:nth-child(3){animation-delay:.3s}
+.a{
+  justify-self:start; max-width:90%;
+  border:1px solid rgba(67,217,138,.35); background:rgba(67,217,138,.07);
+  border-radius:14px 14px 14px 4px; padding:13px 16px; font-size:13.5px; line-height:1.55;
+  color:#E9EEF6;
+  opacity:0; transform:translateY(8px);
+  animation:pop .55s cubic-bezier(.22,.61,.36,1) 2.55s forwards;
+}
+.a .hd{font-family:var(--font-mono); font-size:10px; letter-spacing:.2em; color:var(--gain); margin-bottom:8px; display:flex; align-items:center; gap:8px}
+.a .hd::before{content:"✦"; font-size:12px}
+.a b{color:#fff; font-weight:600}
+.a .lv{font-family:var(--font-mono); font-size:11.5px; color:var(--term-muted); margin-top:8px; display:flex; gap:14px; flex-wrap:wrap}
+.a .lv .g{color:var(--gain)} .a .lv .r{color:var(--loss)}
+@keyframes pop{from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)}}
+
+.mchart{padding:8px 16px 4px}
+.mchart svg{width:100%; height:auto; display:block}
+.mk-line{stroke-dasharray:6 5; opacity:0; animation:fadein .5s ease 3.15s forwards}
+.mk-entry{stroke:var(--gain); stroke-width:1.5}
+.mk-stop{stroke:var(--loss); stroke-width:1.5}
+.mk-zone{fill:rgba(245,184,77,.08); stroke:rgba(245,184,77,.4); stroke-dasharray:4 4; opacity:0; animation:fadein .6s ease 3.35s forwards}
+.mk-tag{font-family:var(--font-mono); font-size:10px; font-weight:500; opacity:0; animation:fadein .5s ease 3.5s forwards}
+@keyframes fadein{to{opacity:1}}
+.trendline{stroke-dasharray:900; stroke-dashoffset:900; animation:dash 2.1s ease-out .5s forwards}
+@keyframes dash{to{stroke-dashoffset:0}}
+.readout{
+  display:flex; gap:16px; flex-wrap:wrap; padding:12px 18px 16px;
+  font-family:var(--font-mono); font-size:11px; color:var(--term-muted); letter-spacing:.03em;
+  border-top:1px solid var(--term-line); margin-top:6px;
+}
+.readout b{color:var(--gain); font-weight:500}
+.readout .s{color:var(--amber-live); margin-left:auto}
+[dir="rtl"] .readout .s{margin-left:0; margin-right:auto}
+
+/* =========================================================================
+ * Long-term case section
+ * ---------------------------------------------------------------------- */
+.long{background:var(--paper); position:relative}
+.long h2{max-width:900px}
+.long .lede{margin-bottom:56px}
+.long .split{display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:flex-start}
+.long .props{display:grid; gap:26px}
+.prop{border-left:2px solid var(--rust); padding-left:22px}
+[dir="rtl"] .prop{border-left:none; border-right:2px solid var(--rust); padding-left:0; padding-right:22px}
+.prop h4{font-family:var(--font-serif); font-size:22px; font-weight:600; color:var(--ink); margin-bottom:8px; line-height:1.2}
+.prop p{color:var(--muted); font-size:15px}
+.prop p b{color:var(--ink); font-weight:600}
+
+/* Compounding chart */
+.compound-wrap{
+  background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px;
+  position:relative;
+}
+.compound-wrap .chart-title{font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); margin-bottom:18px}
+.compound-wrap svg{width:100%; height:auto; overflow:visible}
+.compound-wrap .axis-label{font-family:var(--font-mono); font-size:10.5px; fill:var(--faint); letter-spacing:.06em}
+.compound-wrap .grid-line{stroke:rgba(23,20,18,.06); stroke-width:1}
+.compound-wrap .curve-recurring{stroke:var(--rust); stroke-width:2.4; fill:none; stroke-linecap:round; stroke-linejoin:round}
+.compound-wrap .curve-recurring-area{fill:url(#rustFade)}
+.compound-wrap .curve-bounty{stroke:var(--faint); stroke-width:1.8; fill:none; stroke-dasharray:4 4; stroke-linecap:round}
+.compound-wrap .legend{display:flex; gap:22px; margin-top:16px; font-family:var(--font-mono); font-size:11px; color:var(--muted); flex-wrap:wrap}
+.compound-wrap .legend .sw{display:inline-block; width:14px; height:2px; margin-right:6px; vertical-align:middle}
+[dir="rtl"] .compound-wrap .legend .sw{margin-right:0; margin-left:6px}
+.compound-wrap .legend .sw.rust{background:var(--rust)}
+.compound-wrap .legend .sw.faint{background:var(--faint)}
+.compound-wrap .caption{margin-top:14px; padding-top:14px; border-top:1px dashed var(--line); font-size:13px; color:var(--muted); line-height:1.55}
+.compound-wrap .end-marker{fill:var(--rust)}
+.compound-wrap .end-value{font-family:var(--font-mono); font-size:12px; fill:var(--rust); font-weight:600}
+
+/* =========================================================================
+ * Product section
+ * ---------------------------------------------------------------------- */
+.product{background:var(--paper-2); position:relative}
+.product .prod-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px}
+.pcard{
+  background:var(--card); border:1px solid var(--line); border-radius:14px; padding:28px 26px;
+  display:flex; flex-direction:column;
+  transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.pcard:hover{transform:translateY(-4px); border-color:rgba(166,75,42,.4); box-shadow:0 20px 40px rgba(23,20,18,.06)}
+.pcard .icon{width:42px; height:42px; border-radius:10px; background:var(--rust-tint); color:var(--rust); display:grid; place-items:center; margin-bottom:18px}
+.pcard .icon svg{width:22px; height:22px; stroke:currentColor}
+.pcard.k-ok .icon{background:var(--ok-tint); color:var(--ok-dark)}
+.pcard.k-az .icon{background:var(--azure-tint); color:var(--azure)}
+.pcard.k-am .icon{background:var(--amber-tint); color:var(--amber)}
+.pcard h3{font-family:var(--font-serif); font-size:20px; margin-bottom:9px}
+.pcard p{color:var(--muted); font-size:14.5px; line-height:1.6}
+.pcard p b{color:var(--ink); font-weight:600}
+
+/* Exchange coverage band */
+.exchanges{padding-top:20px; border-top:1px solid var(--line)}
+.exch-h{margin-bottom:28px}
+.exch-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+.exch-card{
+  position:relative; padding:26px 24px; border-radius:14px;
+  background:var(--card); border:1px solid var(--line);
+  display:flex; flex-direction:column; gap:8px;
+  transition:transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.exch-card:hover{transform:translateY(-3px); border-color:var(--ink); box-shadow:0 16px 34px rgba(23,20,18,.06)}
+.exch-card.live{
+  background:linear-gradient(180deg, var(--card) 0%, #F1EFE6 100%);
+  border-color:rgba(46,125,79,.4);
+}
+.exch-card.soon{opacity:.92}
+.exch-badge{
+  align-self:flex-start;
+  font-family:var(--font-mono); font-size:10px; letter-spacing:.16em; font-weight:600;
+  padding:4px 9px; border-radius:99px; text-transform:uppercase;
+  background:var(--ok-tint); color:var(--ok-dark);
+  display:inline-flex; align-items:center; gap:6px;
+}
+.exch-badge::before{
+  content:""; width:5px; height:5px; border-radius:50%; background:var(--ok);
+  box-shadow:0 0 0 3px rgba(46,125,79,.2);
+  animation:blink 1.6s ease-in-out infinite;
+}
+.exch-badge.soon{background:var(--amber-tint); color:var(--amber)}
+.exch-badge.soon::before{background:var(--amber); box-shadow:0 0 0 3px rgba(184,113,26,.2); animation:none}
+.exch-name{
+  font-family:var(--font-serif); font-size:32px; font-weight:600; color:var(--ink);
+  letter-spacing:-.02em; line-height:1.1; margin-top:6px;
+}
+.exch-note{color:var(--muted); font-size:13.5px; line-height:1.55}
+@media (max-width:880px){
+  .exch-grid{grid-template-columns:1fr; gap:12px}
+  .exch-name{font-size:26px}
+}
+
+/* =========================================================================
+ * Tiers section
+ * ---------------------------------------------------------------------- */
+.tiers .t-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:52px}
+.tier{
+  position:relative;
+  background:var(--card); border:1px solid var(--line); border-radius:16px; padding:32px 28px;
+  display:flex; flex-direction:column;
+  transition:transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.tier:hover{transform:translateY(-6px); border-color:var(--ink); box-shadow:0 28px 60px rgba(23,20,18,.08)}
+.tier.featured{
+  background:linear-gradient(180deg, var(--ink) 0%, #22201C 100%);
+  color:#E8E2D1; border-color:var(--ink);
+  transform:translateY(-8px);
+}
+.tier.featured:hover{transform:translateY(-14px); box-shadow:0 40px 80px rgba(23,20,18,.32)}
+.tier .badge{
+  position:absolute; top:-13px; left:24px;
+  background:var(--rust); color:#fff; font-family:var(--font-mono); font-size:10.5px;
+  padding:5px 11px; border-radius:99px; letter-spacing:.12em; text-transform:uppercase; font-weight:600;
+}
+[dir="rtl"] .tier .badge{left:auto; right:24px}
+.tier .t-name{font-family:var(--font-serif); font-size:24px; font-weight:600; color:var(--ink); letter-spacing:-.01em}
+.tier.featured .t-name{color:#F4F1EA}
+.tier .t-sub{font-family:var(--font-mono); font-size:11.5px; color:var(--muted); margin-top:6px; letter-spacing:.06em; text-transform:uppercase}
+.tier.featured .t-sub{color:#B4A98D}
+.tier .t-rate{
+  font-family:var(--font-serif); font-size:56px; font-weight:600; line-height:1;
+  color:var(--rust); margin:22px 0 4px; letter-spacing:-.03em;
+}
+.tier.featured .t-rate{color:#F0B896}
+.tier .t-note{font-family:var(--font-mono); font-size:11.5px; color:var(--muted); letter-spacing:.03em; margin-bottom:22px}
+.tier.featured .t-note{color:#B4A98D}
+.tier ul{list-style:none; padding:0; margin:0 0 26px; display:grid; gap:10px}
+.tier li{
+  padding-left:22px; position:relative;
+  font-size:14px; line-height:1.5; color:var(--ink-2);
+}
+[dir="rtl"] .tier li{padding-left:0; padding-right:22px}
+.tier li::before{
+  content:""; position:absolute; left:0; top:8px;
+  width:12px; height:6px;
+  border-left:1.8px solid var(--rust); border-bottom:1.8px solid var(--rust);
+  transform:rotate(-45deg);
+}
+[dir="rtl"] .tier li::before{left:auto; right:0; transform:rotate(45deg) scaleX(-1)}
+.tier.featured li{color:#E8E2D1}
+.tier.featured li::before{border-color:#F0B896}
+.tier .t-cta{margin-top:auto}
+.tier .t-cta .btn{width:100%; padding:12px 18px}
+
+.tiers-note{
+  margin-top:32px; padding:20px 24px;
+  background:var(--card-2); border:1px dashed var(--line); border-radius:12px;
+  font-size:13.5px; color:var(--muted); line-height:1.6;
+}
+
+/* =========================================================================
+ * Revenue Calculator
+ * ---------------------------------------------------------------------- */
+.calc-section{background:var(--paper)}
+.calc{
+  display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-top:52px;
+  background:var(--card); border:1px solid var(--line); border-radius:16px;
+  padding:36px;
+  box-shadow:0 6px 24px rgba(23,20,18,.04);
+}
+.calc-inputs{display:grid; gap:26px}
+.calc-field label{
+  display:flex; justify-content:space-between; align-items:baseline;
+  font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); margin-bottom:10px;
+}
+.calc-field label .val{
+  font-family:var(--font-mono); font-size:15px; letter-spacing:0; color:var(--ink);
+  font-weight:600; text-transform:none;
+}
+.calc-field input[type=range]{
+  -webkit-appearance:none; appearance:none;
+  width:100%; height:4px; background:rgba(23,20,18,.14); border-radius:99px; outline:none;
+}
+.calc-field input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none; appearance:none;
+  width:20px; height:20px; border-radius:50%; background:var(--rust);
+  cursor:pointer; box-shadow:0 2px 6px rgba(166,75,42,.4);
+  transition:transform .12s ease;
+}
+.calc-field input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.15)}
+.calc-field input[type=range]::-moz-range-thumb{
+  width:20px; height:20px; border-radius:50%; background:var(--rust); border:none;
+  cursor:pointer; box-shadow:0 2px 6px rgba(166,75,42,.4);
+}
+.calc-field .ticks{
+  display:flex; justify-content:space-between; margin-top:8px;
+  font-family:var(--font-mono); font-size:10px; color:var(--faint);
+}
+.tier-radio{display:flex; gap:8px; margin-top:4px}
+.tier-radio label{
+  flex:1; text-align:center; padding:10px 8px;
+  border:1px solid var(--line); border-radius:10px;
+  font-family:var(--font-mono); font-size:12px; letter-spacing:.06em;
+  cursor:pointer; transition:all .15s ease; text-transform:uppercase;
+  color:var(--muted); display:block; margin:0;
+}
+.tier-radio input{display:none}
+.tier-radio label:hover{border-color:var(--muted); color:var(--ink)}
+.tier-radio input:checked + span,
+.tier-radio label:has(input:checked){background:var(--ink); color:#F4F1EA; border-color:var(--ink)}
+.tier-radio label span{display:block}
+
+.calc-outputs{display:grid; gap:16px; align-content:flex-start}
+.calc-outputs .headline{
+  background:var(--ink); color:#F4F1EA; border-radius:14px; padding:26px 26px 22px;
+  position:relative; overflow:hidden;
+}
+.calc-outputs .headline::before{
+  content:""; position:absolute; inset:0;
+  background:radial-gradient(300px 200px at 100% 0%, rgba(166,75,42,.24), transparent 70%);
+  pointer-events:none;
+}
+.calc-outputs .headline .lbl{
+  position:relative; font-family:var(--font-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase;
+  color:rgba(244,241,234,.7);
+}
+.calc-outputs .headline .num{
+  position:relative; font-family:var(--font-serif); font-size:52px; font-weight:600; line-height:1;
+  margin-top:10px; letter-spacing:-.02em;
+}
+.calc-outputs .headline .num .cur{font-size:26px; color:rgba(244,241,234,.6); font-weight:500; margin-right:4px; vertical-align:top}
+[dir="rtl"] .calc-outputs .headline .num .cur{margin-right:0; margin-left:4px}
+.calc-outputs .headline .sub{position:relative; font-family:var(--font-mono); font-size:11.5px; color:rgba(244,241,234,.55); margin-top:6px}
+
+.calc-outputs .row{
+  display:flex; justify-content:space-between; align-items:baseline;
+  padding:16px 20px; background:var(--card-2); border:1px solid var(--line); border-radius:12px;
+}
+.calc-outputs .row .lbl{font-family:var(--font-mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.calc-outputs .row .num{font-family:var(--font-serif); font-size:26px; font-weight:600; color:var(--ink)}
+.calc-outputs .row .num .cur{font-size:14px; color:var(--faint); margin-right:2px}
+[dir="rtl"] .calc-outputs .row .num .cur{margin-right:0; margin-left:2px}
+
+.calc-note{margin-top:20px; font-size:13px; color:var(--muted); line-height:1.6}
+.calc-disclaimer{
+  margin-top:24px; padding:16px 20px;
+  border-left:2px solid var(--faint); background:var(--card-2); border-radius:0 8px 8px 0;
+  font-size:12.5px; color:var(--muted); line-height:1.55;
+}
+[dir="rtl"] .calc-disclaimer{border-left:none; border-right:2px solid var(--faint); border-radius:8px 0 0 8px}
+
+/* =========================================================================
+ * How it works (timeline)
+ * ---------------------------------------------------------------------- */
+.how{background:var(--paper-2)}
+.timeline{
+  display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:52px;
+  position:relative;
+}
+.timeline::before{
+  content:""; position:absolute; top:26px; left:22px; right:22px; height:1px;
+  background:linear-gradient(90deg, transparent 0%, var(--rust) 8%, var(--rust) 92%, transparent 100%);
+  opacity:.35;
+}
+.tl-step{padding:0 22px; position:relative}
+.tl-step .dot{
+  width:16px; height:16px; border-radius:50%;
+  background:var(--paper-2); border:2px solid var(--rust);
+  position:relative; z-index:1; margin-bottom:22px;
+}
+.tl-step .dot::after{content:""; position:absolute; inset:3px; border-radius:50%; background:var(--rust)}
+.tl-step .n{font-family:var(--font-mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); margin-bottom:8px}
+.tl-step h4{font-family:var(--font-serif); font-size:19px; font-weight:600; color:var(--ink); margin-bottom:10px}
+.tl-step p{color:var(--muted); font-size:14px; line-height:1.6}
+.tl-step p b{color:var(--ink); font-weight:600}
+
+/* =========================================================================
+ * Commission precision block
+ * ---------------------------------------------------------------------- */
+.commission{background:var(--paper)}
+.precise{
+  background:linear-gradient(180deg, var(--ink) 0%, #1E1B18 100%);
+  color:#DAD3C4; border-radius:16px; padding:44px 46px; margin-top:44px;
+  box-shadow:0 20px 60px rgba(23,20,18,.16);
+}
+.precise .row{
+  display:grid; grid-template-columns:130px 1fr; gap:22px; padding:18px 0;
+  border-top:1px solid rgba(255,255,255,.08); align-items:flex-start;
+}
+.precise .row:first-child{border-top:none; padding-top:0}
+.precise .tag{
+  font-family:var(--font-mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  font-weight:600; padding-top:3px;
+}
+.precise .ok .tag{color:#7FDCA8}
+.precise .no .tag{color:#F1A18D}
+.precise .txt{font-size:14.5px; line-height:1.68}
+.precise b{color:#fff; font-weight:600}
+
+.precise-note{
+  margin-top:26px; padding:22px 26px;
+  background:var(--ok-tint); border-left:3px solid var(--ok); border-radius:0 12px 12px 0;
+}
+[dir="rtl"] .precise-note{border-left:none; border-right:3px solid var(--ok); border-radius:12px 0 0 12px}
+.precise-note .t{
+  font-family:var(--font-sans); font-weight:700; font-size:14px; color:var(--ok-dark);
+  display:block; margin-bottom:8px;
+}
+.precise-note p{font-size:14px; color:var(--ink-2); line-height:1.62}
+.precise-note p b{color:var(--ink); font-weight:600}
+
+/* =========================================================================
+ * Boundaries
+ * ---------------------------------------------------------------------- */
+.boundaries{background:var(--paper-2)}
+.bnd-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-top:44px}
+.bnd-col{
+  background:var(--card); border:1px solid var(--line); border-radius:14px; padding:30px 28px;
+}
+.bnd-col.no{border-left:3px solid #D8664A}
+[dir="rtl"] .bnd-col.no{border-left-width:1px; border-right:3px solid #D8664A}
+.bnd-col.yes{border-left:3px solid var(--ok)}
+[dir="rtl"] .bnd-col.yes{border-left-width:1px; border-right:3px solid var(--ok)}
+.bnd-col h3{
+  font-family:var(--font-mono); font-size:11.5px; letter-spacing:.16em; text-transform:uppercase;
+  font-weight:600; margin-bottom:20px;
+}
+.bnd-col.no h3{color:#D8664A}
+.bnd-col.yes h3{color:var(--ok-dark)}
+.bnd-list{list-style:none; padding:0; margin:0; display:grid; gap:14px}
+.bnd-list li{padding-left:26px; position:relative; font-size:14.5px; line-height:1.6; color:var(--ink-2)}
+[dir="rtl"] .bnd-list li{padding-left:0; padding-right:26px}
+.bnd-list li b{color:var(--ink); font-weight:600}
+.bnd-list.no li::before{
+  content:"×"; position:absolute; left:0; top:0; color:#D8664A; font-size:20px; font-weight:600; line-height:1.2;
+}
+[dir="rtl"] .bnd-list.no li::before{left:auto; right:0}
+.bnd-list.yes li::before{
+  content:""; position:absolute; left:2px; top:8px; width:12px; height:6px;
+  border-left:1.8px solid var(--ok); border-bottom:1.8px solid var(--ok); transform:rotate(-45deg);
+}
+[dir="rtl"] .bnd-list.yes li::before{left:auto; right:2px; transform:rotate(45deg) scaleX(-1)}
+
+/* =========================================================================
+ * FAQ
+ * ---------------------------------------------------------------------- */
+.faq{background:var(--paper)}
+.faq-grid{margin-top:44px; border-top:1px solid var(--line)}
+.qa{border-bottom:1px solid var(--line); padding:24px 0}
+.qa summary{
+  cursor:pointer; list-style:none;
+  display:flex; justify-content:space-between; align-items:center; gap:24px;
+  font-family:var(--font-serif); font-size:19px; font-weight:600; color:var(--ink); line-height:1.3;
+}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary .plus{
+  flex:none; width:26px; height:26px; border:1px solid var(--line); border-radius:50%;
+  display:grid; place-items:center; color:var(--muted); font-size:16px; font-weight:400;
+  transition:transform .22s ease, background .18s ease, color .18s ease, border-color .18s ease;
+}
+.qa[open] summary .plus{transform:rotate(45deg); background:var(--rust); color:#fff; border-color:var(--rust)}
+.qa .ans{
+  margin-top:14px; color:var(--muted); font-size:15px; line-height:1.68; max-width:900px;
+  padding-right:50px;
+}
+[dir="rtl"] .qa .ans{padding-right:0; padding-left:50px}
+.qa .ans b{color:var(--ink); font-weight:600}
+
+/* =========================================================================
+ * Apply form
+ * ---------------------------------------------------------------------- */
+.apply{background:var(--paper-2)}
+.apply-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:52px; margin-top:44px; align-items:flex-start}
+.apply-left h2{margin-bottom:14px}
+.apply-left .lede{margin-bottom:28px}
+.tg-card{
+  background:linear-gradient(180deg, var(--ink), #24211E);
+  color:#F4F1EA; border-radius:14px; padding:28px 26px;
+  box-shadow:0 12px 30px rgba(23,20,18,.14);
+}
+.tg-card .tg-h{font-family:var(--font-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#B4A98D; margin-bottom:12px; display:flex; align-items:center; gap:8px}
+.tg-card .tg-h::before{content:""; width:6px; height:6px; border-radius:50%; background:var(--gain); box-shadow:0 0 0 3px rgba(67,217,138,.22)}
+.tg-card .handle{font-family:var(--font-serif); font-size:32px; font-weight:600; letter-spacing:-.01em; color:#fff; line-height:1.1}
+.tg-card .tg-btn{
+  margin-top:18px; display:inline-flex; align-items:center; gap:9px;
+  padding:12px 20px; background:#229ED9; color:#fff; border-radius:10px;
+  font-weight:600; font-size:14px; transition:transform .14s ease, background .14s ease;
+}
+.tg-card .tg-btn:hover{background:#1B8AC0; transform:translateY(-1px)}
+.tg-card .tg-btn svg{width:16px; height:16px}
+
+form.apply-form{
+  background:var(--card); border:1px solid var(--line); border-radius:14px; padding:32px;
+  display:grid; gap:18px;
+  box-shadow:0 4px 16px rgba(23,20,18,.03);
+}
+.apply-form .row2{display:grid; grid-template-columns:1fr 1fr; gap:14px}
+.apply-form .fld{display:flex; flex-direction:column; gap:7px}
+.apply-form label{font-family:var(--font-mono); font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted)}
+.apply-form input, .apply-form select, .apply-form textarea{
+  padding:11px 13px; border:1px solid var(--line); border-radius:8px;
+  background:var(--paper); color:var(--ink); font-size:14.5px; font-family:var(--font-sans);
+  transition:border-color .15s ease, box-shadow .15s ease;
+}
+.apply-form input:focus, .apply-form select:focus, .apply-form textarea:focus{
+  outline:none; border-color:var(--rust); box-shadow:0 0 0 3px rgba(166,75,42,.14);
+}
+.apply-form textarea{min-height:88px; resize:vertical; font-family:var(--font-sans); line-height:1.55}
+.apply-form .actions{display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-top:6px}
+.apply-form .actions .btn{padding:13px 22px}
+.apply-form .sent{display:none; padding:11px 14px; background:var(--ok-tint); border-radius:8px; font-size:13px; color:var(--ok-dark); border:1px solid rgba(46,125,79,.24)}
+.apply-form .sent.on{display:block}
+.apply-note{margin-top:16px; font-size:12.5px; color:var(--muted); font-family:var(--font-mono); line-height:1.55}
+
+/* =========================================================================
+ * Footer
+ * ---------------------------------------------------------------------- */
+footer{background:var(--ink); color:#B4A98D; padding:56px 0 40px; border-top:1px solid var(--ink)}
+footer .foot-grid{
+  display:grid; grid-template-columns:1.4fr 1fr 1fr 1fr; gap:36px;
+  padding-bottom:36px; border-bottom:1px solid rgba(255,255,255,.08);
+}
+footer h5{font-family:var(--font-mono); font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#F4F1EA; margin:0 0 14px; font-weight:600}
+footer ul{list-style:none; padding:0; margin:0; display:grid; gap:8px}
+footer a{color:#DAD3C4; font-size:13.5px; transition:color .15s ease}
+footer a:hover{color:#fff}
+footer .foot-brand{max-width:320px}
+footer .foot-brand .brand{color:#F4F1EA; margin-bottom:14px}
+footer .foot-brand .brand-name{color:#F4F1EA}
+footer .foot-brand .brand-ver{border-color:rgba(255,255,255,.14); color:#B4A98D}
+footer .foot-brand p{font-size:13px; color:#B4A98D; line-height:1.6}
+footer .legal{padding-top:28px; font-size:12px; color:#8A8172; line-height:1.7}
+footer .legal b{color:#DAD3C4; font-weight:600}
+footer .copy{margin-top:16px; font-family:var(--font-mono); font-size:11.5px; color:#8A8172; letter-spacing:.04em}
+
+/* =========================================================================
+ * Responsive
+ * ---------------------------------------------------------------------- */
+@media (max-width:1100px){
+  .hero .grid{grid-template-columns:1fr; gap:44px}
+  .long .split{grid-template-columns:1fr; gap:44px}
+  .apply-grid{grid-template-columns:1fr; gap:36px}
+}
+@media (max-width:880px){
+  :root{--pad:22px}
+  section{padding:64px 0}
+  .product .prod-grid,
+  .tiers .t-grid{grid-template-columns:1fr; gap:16px}
+  .tier.featured{transform:none}
+  .tier.featured:hover{transform:translateY(-6px)}
+  .calc{grid-template-columns:1fr; gap:28px; padding:24px}
+  .timeline{grid-template-columns:1fr 1fr; gap:26px 12px}
+  .timeline::before{display:none}
+  .precise{padding:30px 22px}
+  .precise .row{grid-template-columns:1fr; gap:6px}
+  .bnd-grid{grid-template-columns:1fr}
+  .apply-form .row2{grid-template-columns:1fr}
+  footer .foot-grid{grid-template-columns:1fr 1fr; gap:28px}
+  .nav-links{display:none}
+  h1{font-size:38px}
+  h2{font-size:28px}
+  .qa .ans{padding-right:0; padding-left:0}
+  .stripe .wrap{gap:12px; font-size:10.5px}
+  .stripe .sep{display:none}
+}
+@media (max-width:560px){
+  .timeline{grid-template-columns:1fr}
+  footer .foot-grid{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001s !important; animation-iteration-count:1 !important; transition-duration:.001s !important}
+  .q,.think,.a,.mk-line,.mk-zone,.mk-tag,.trendline{opacity:1; transform:none; stroke-dashoffset:0}
+  .reveal{opacity:1; transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ─────────────── Compliance stripe ─────────────── -->
+<div class="stripe">
+  <div class="wrap">
+    <span class="dot"></span>
+    <b data-i="stripe.a">AI CHART INTELLIGENCE</b>
+    <span class="sep">/</span>
+    <span data-i="stripe.b">Built by an AI company, not a broker desk</span>
+    <span class="sep">/</span>
+    <span data-i="stripe.c">Partner payouts settled monthly · Recurring, not one-off</span>
+  </div>
+</div>
+
+<!-- ─────────────── Nav ─────────────── -->
+<nav class="site">
+  <div class="wrap bar">
+    <a class="brand" href="https://chartcontrol.onrender.com">
+      <span class="mark">✦</span>
+      <span class="brand-name">ChartControl</span>
+      <span class="brand-ver">Partners v2</span>
+    </a>
+    <div class="nav-links">
+      <a href="#long"    data-i="nav.long">The long-term case</a>
+      <a href="#product" data-i="nav.product">The product</a>
+      <a href="#tiers"   data-i="nav.tiers">Tiers</a>
+      <a href="#calc"    data-i="nav.calc">Calculator</a>
+      <a href="#faq"     data-i="nav.faq">FAQ</a>
+    </div>
+    <div class="nav-r">
+      <div class="lang-wrap">
+        <button class="lang-btn" id="langBtn" aria-haspopup="menu" aria-expanded="false">
+          <svg class="globe" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
+            <circle cx="10" cy="10" r="7.5"/>
+            <path d="M2.5 10h15M10 2.5c2.4 3 2.4 12 0 15M10 2.5c-2.4 3-2.4 12 0 15"/>
+          </svg>
+          <span id="langLabel">EN</span>
+          <svg class="caret" viewBox="0 0 10 10" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 4l3 3 3-3"/></svg>
+        </button>
+        <div class="lang-menu" id="langMenu" role="menu"></div>
+      </div>
+      <a class="btn primary" href="https://t.me/Chartcontrolai" target="_blank" rel="noopener" data-i="nav.cta">Become a partner</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ─────────────── HERO ─────────────── -->
+<header class="hero">
+  <div class="wrap grid">
+    <div class="hero-left">
+      <div class="section-eyebrow reveal" data-i="hero.eyebrow">Partner programme · community owners, analysts, creators</div>
+      <h1 class="reveal d1">
+        <span data-i="hero.h1_a">The chart answers.</span><br>
+        <span data-i="hero.h1_b">You keep</span> <em data-i="hero.h1_c">a share — for as long as the member trades.</em>
+      </h1>
+      <p class="lede reveal d2" data-i="hero.lede" data-i-html="1">ChartControl is an AI company for the people who live on charts…</p>
+      <div class="hero-cta reveal d3">
+        <a class="btn primary lg" href="https://t.me/Chartcontrolai" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M9.036 15.803l-.371 5.212c.531 0 .762-.228 1.037-.5l2.49-2.373 5.157 3.775c.945.52 1.618.246 1.87-.876l3.39-15.878c.298-1.394-.502-1.94-1.42-1.597L1.28 9.895c-1.36.531-1.34 1.293-.232 1.638l4.996 1.558 11.6-7.31c.546-.36 1.043-.16.634.2z"/></svg>
+          <span data-i="hero.cta_primary">Talk on Telegram — @Chartcontrolai</span>
+        </a>
+        <a class="btn ghost lg" href="https://chartcontrol.onrender.com" target="_blank" rel="noopener">
+          <span data-i="hero.cta_ghost">Open the live product</span>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <div class="trust reveal d4">
+        <span><span class="pulse"></span><span data-i="hero.trust_a">Monthly payout, in writing</span></span>
+        <span><span class="pulse"></span><span data-i="hero.trust_b">Stacks on your existing referral deals</span></span>
+        <span><span class="pulse"></span><span data-i="hero.trust_c">Reply within one business day</span></span>
+      </div>
+    </div>
+
+    <!-- Terminal preview (right) -->
+    <div class="hero-right reveal d2">
+      <div class="termwrap">
+        <div class="terminal" id="heroTerminal" role="img" aria-label="ChartControl AI answers a trader question and marks the levels on the live chart">
+          <div class="tbar">
+            <i></i><i></i><i></i>
+            <span class="t" data-i="term.title">BTC-USDT · 4H · LIVE</span>
+            <span class="live" data-i="term.live">LIVE</span>
+          </div>
+          <div class="chat">
+            <div class="q"><span data-i="term.q">Is BTC breaking out here — where do I get stopped?</span><span class="caret"></span></div>
+            <div class="think"><i></i><i></i><i></i></div>
+            <div class="a">
+              <div class="hd" data-i="term.a_head">CHARTCONTROL AI · SIGNAL</div>
+              <div data-i="term.a_body" data-i-html="1">Momentum shift <b>confirmed</b> on the 4H…</div>
+              <div class="lv">
+                <span class="g">▲ <span data-i="term.entry">Entry 67,180</span></span>
+                <span class="r">✕ <span data-i="term.stop">Invalidation 66,240</span></span>
+                <span data-i="term.rr">R:R 2.4</span>
+              </div>
+            </div>
+          </div>
+          <div class="mchart">
+            <svg viewBox="0 0 580 220" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="trendGrad" x1="0" x2="1" y1="0" y2="0">
+                  <stop offset="0%" stop-color="#F5B84D" stop-opacity=".2"/>
+                  <stop offset="100%" stop-color="#F5B84D" stop-opacity="1"/>
+                </linearGradient>
+              </defs>
+              <g stroke="rgba(148,163,184,.08)">
+                <line x1="0" y1="45" x2="580" y2="45"/>
+                <line x1="0" y1="90" x2="580" y2="90"/>
+                <line x1="0" y1="135" x2="580" y2="135"/>
+                <line x1="0" y1="180" x2="580" y2="180"/>
+              </g>
+              <!-- candles: green -->
+              <g stroke="#43D98A" fill="rgba(67,217,138,.18)" stroke-width="1.3">
+                <line x1="34" y1="170" x2="34" y2="132"/><rect x="28" y="138" width="13" height="28" rx="1"/>
+                <line x1="82" y1="156" x2="82" y2="116"/><rect x="76" y="122" width="13" height="28" rx="1"/>
+                <line x1="130" y1="144" x2="130" y2="106"/><rect x="124" y="112" width="13" height="26" rx="1"/>
+                <line x1="226" y1="132" x2="226" y2="94"/><rect x="220" y="100" width="13" height="28" rx="1"/>
+                <line x1="322" y1="116" x2="322" y2="76"/><rect x="316" y="82" width="13" height="28" rx="1"/>
+                <line x1="466" y1="90" x2="466" y2="42"/><rect x="460" y="48" width="13" height="34" rx="1"/>
+                <line x1="514" y1="76" x2="514" y2="28"/><rect x="508" y="34" width="13" height="36" rx="1"/>
+              </g>
+              <!-- candles: red -->
+              <g stroke="#F08A8A" fill="rgba(240,138,138,.18)" stroke-width="1.3">
+                <line x1="178" y1="120" x2="178" y2="94"/><rect x="172" y="98" width="13" height="16" rx="1"/>
+                <line x1="274" y1="106" x2="274" y2="82"/><rect x="268" y="86" width="13" height="14" rx="1"/>
+                <line x1="418" y1="86" x2="418" y2="62"/><rect x="412" y="66" width="13" height="14" rx="1"/>
+              </g>
+              <!-- Trend line -->
+              <path class="trendline" d="M34 148 L82 132 L130 120 L178 108 L226 96 L274 86 L322 74 L370 62 L418 52 L466 38 L514 24"
+                fill="none" stroke="url(#trendGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- AI marks -->
+              <rect class="mk-zone" x="352" y="110" width="212" height="42" rx="6"/>
+              <line class="mk-line mk-entry" x1="352" y1="122" x2="564" y2="122"/>
+              <line class="mk-line mk-stop"  x1="352" y1="150" x2="564" y2="150"/>
+              <text class="mk-tag" x="358" y="118" fill="#43D98A">▲ ENTRY 67,180</text>
+              <text class="mk-tag" x="358" y="164" fill="#F08A8A">✕ INVALIDATION 66,240</text>
+            </svg>
+          </div>
+          <div class="readout">
+            <span><span data-i="term.rd_rsi">RSI</span> <b>61.8</b></span>
+            <span><span data-i="term.rd_macd">MACD</span> <b>cross+</b></span>
+            <span><span data-i="term.rd_vol">VOL</span> <b>expanding</b></span>
+            <span><span data-i="term.rd_tf">TF ALIGN</span> <b>3/3</b></span>
+            <span class="s">✦ <span data-i="term.rd_time">answered in 4.2s</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ─────────────── Long-term case ─────────────── -->
+<section id="long" class="long">
+  <div class="wrap">
+    <div class="section-eyebrow reveal" data-i="long.eyebrow">01 · The long-term case</div>
+    <h2 class="reveal d1" data-i="long.h2">This is not an affiliate campaign.
+It is a five-year revenue engine.</h2>
+    <p class="lede reveal d2" data-i="long.lede">Most tools pay you a flat bounty and forget your name…</p>
+
+    <div class="split" style="margin-top:56px">
+      <div class="props reveal">
+        <div class="prop">
+          <h4 data-i="long.p1_h">A member trades every month.</h4>
+          <p data-i="long.p1_b" data-i-html="1">One active member does not settle you a bounty…</p>
+        </div>
+        <div class="prop">
+          <h4 data-i="long.p2_h">Every new member compounds.</h4>
+          <p data-i="long.p2_b" data-i-html="1">Month twelve of the partnership is not month one repeated…</p>
+        </div>
+        <div class="prop">
+          <h4 data-i="long.p3_h">The tool does not go stale.</h4>
+          <p data-i="long.p3_b" data-i-html="1">Our models improve; the pair list grows…</p>
+        </div>
+      </div>
+
+      <div class="compound-wrap reveal d2">
+        <div class="chart-title" data-i="long.chart_y">Cumulative monthly revenue share</div>
+        <svg viewBox="0 0 480 280" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Cumulative revenue-share chart">
+          <defs>
+            <linearGradient id="rustFade" x1="0" x2="0" y1="0" y2="1">
+              <stop offset="0%" stop-color="#A64B2A" stop-opacity=".24"/>
+              <stop offset="100%" stop-color="#A64B2A" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- axes -->
+          <g class="grid-line">
+            <line x1="42" y1="30"  x2="470" y2="30"/>
+            <line x1="42" y1="90"  x2="470" y2="90"/>
+            <line x1="42" y1="150" x2="470" y2="150"/>
+            <line x1="42" y1="210" x2="470" y2="210"/>
+          </g>
+          <line x1="42" y1="30" x2="42" y2="240" stroke="rgba(23,20,18,.2)" stroke-width="1"/>
+          <line x1="42" y1="240" x2="470" y2="240" stroke="rgba(23,20,18,.2)" stroke-width="1"/>
+          <!-- y-labels -->
+          <text class="axis-label" x="36" y="34" text-anchor="end">100%</text>
+          <text class="axis-label" x="36" y="94" text-anchor="end">75%</text>
+          <text class="axis-label" x="36" y="154" text-anchor="end">50%</text>
+          <text class="axis-label" x="36" y="214" text-anchor="end">25%</text>
+          <text class="axis-label" x="36" y="244" text-anchor="end">0</text>
+          <!-- x-labels -->
+          <text class="axis-label" x="42"  y="258">M1</text>
+          <text class="axis-label" x="150" y="258">M12</text>
+          <text class="axis-label" x="258" y="258">M24</text>
+          <text class="axis-label" x="366" y="258">M36</text>
+          <text class="axis-label" x="470" y="258" text-anchor="end">M60</text>
+          <!-- recurring curve (compound growth) -->
+          <path class="curve-recurring-area" id="areaPath" d="M42,240 L42,232 L60,225 L80,215 L100,203 L130,186 L160,168 L190,150 L220,132 L260,110 L300,90 L340,72 L380,58 L420,46 L470,32 L470,240 Z"/>
+          <path class="curve-recurring" d="M42,232 L60,225 L80,215 L100,203 L130,186 L160,168 L190,150 L220,132 L260,110 L300,90 L340,72 L380,58 L420,46 L470,32"/>
+          <!-- bounty curve (flat) -->
+          <path class="curve-bounty" d="M42,232 L60,224 L80,222 L100,222 L470,222"/>
+          <!-- end marker -->
+          <circle class="end-marker" cx="470" cy="32" r="4"/>
+          <text class="end-value" x="464" y="22" text-anchor="end">Recurring →</text>
+          <text class="axis-label" x="464" y="218" text-anchor="end" fill="#948B7C">Bounty flat</text>
+        </svg>
+        <div class="legend">
+          <span><span class="sw rust"></span> Recurring share (this programme)</span>
+          <span><span class="sw faint"></span> Flat one-off bounty</span>
+        </div>
+        <div class="caption" data-i="long.chart_label">Illustrative — a partner adding 15 active members / month…</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Product ─────────────── -->
+<section id="product" class="product">
+  <div class="wrap">
+    <div class="section-eyebrow reveal" data-i="prod.eyebrow">02 · What the AI actually does</div>
+    <h2 class="reveal d1" data-i="prod.h2">An AI trained to read charts —
+not to write essays about them.</h2>
+    <p class="lede reveal d2" data-i="prod.lede">The product is a live analysis terminal…</p>
+
+    <div class="prod-grid">
+      <div class="pcard reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M3 12h3M18 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"/><circle cx="12" cy="12" r="3.5"/></svg></div>
+        <h3 data-i="prod.f1_h">Ask in plain language</h3>
+        <p data-i="prod.f1_b">"Is this a breakout or a trap?"…</p>
+      </div>
+      <div class="pcard k-ok reveal d1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 20V10M11 20V4M16 20v-6M21 20v-9"/></svg></div>
+        <h3 data-i="prod.f2_h">Levels drawn on the chart</h3>
+        <p data-i="prod.f2_b">Entry zone, invalidation…</p>
+      </div>
+      <div class="pcard k-az reveal d2">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4zM4 10h16M8 14h3M8 17h6"/></svg></div>
+        <h3 data-i="prod.f3_h">Signals with an audit trail</h3>
+        <p data-i="prod.f3_b" data-i-html="1">Every signal ships with direction, entry zone…</p>
+      </div>
+      <div class="pcard k-am reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9h10M7 13h10M7 17h6"/></svg></div>
+        <h3 data-i="prod.f4_h">Twelve read-only market tools</h3>
+        <p data-i="prod.f4_b">Snapshots, candles, order-book depth, funding…</p>
+      </div>
+      <div class="pcard reveal d1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3L4 12h5l-1 9 8-11h-5l1-7z"/></svg></div>
+        <h3 data-i="prod.f5_h">Custom indicators &amp; signal rules</h3>
+        <p data-i="prod.f5_b" data-i-html="1">Members can write their own rules as formulas…</p>
+      </div>
+      <div class="pcard k-ok reveal d2">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg></div>
+        <h3 data-i="prod.f6_h">Live on KuCoin · Bitget & Bybit next</h3>
+        <p data-i="prod.f6_b">Real-time WebSocket depth on KuCoin today…</p>
+      </div>
+    </div>
+
+    <!-- Exchange coverage roadmap -->
+    <div class="exchanges reveal" style="margin-top:52px">
+      <div class="exch-h">
+        <div class="mono" style="font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted)" data-i="exch.eyebrow">Exchange coverage</div>
+        <h4 class="serif" style="font-size:24px; font-weight:600; color:var(--ink); margin-top:6px" data-i="exch.h">Crypto first. Live and next.</h4>
+      </div>
+      <div class="exch-grid">
+        <div class="exch-card live">
+          <div class="exch-badge" data-i="exch.live">LIVE</div>
+          <div class="exch-name">KuCoin</div>
+          <div class="exch-note" data-i="exch.kucoin">660+ USDT perpetual pairs · full AI Copilot · real-time WebSocket</div>
+        </div>
+        <div class="exch-card soon">
+          <div class="exch-badge soon" data-i="exch.next">NEXT · Q1 2026</div>
+          <div class="exch-name">Bitget</div>
+          <div class="exch-note" data-i="exch.bitget">Wiring in progress · same product surface · same partner terms</div>
+        </div>
+        <div class="exch-card soon">
+          <div class="exch-badge soon" data-i="exch.after">AFTER · Q2 2026</div>
+          <div class="exch-name">Bybit</div>
+          <div class="exch-note" data-i="exch.bybit">On the roadmap · date confirmed only when integration is production-ready</div>
+        </div>
+      </div>
+      <p class="mono" style="font-size:11.5px; color:var(--faint); margin-top:20px; line-height:1.6" data-i="exch.note">The exchange layer is built to be plural — the AI, the Copilot, the signal audit trail and the partner dashboard remain identical across venues. Attribution follows the member across every exchange we wire, at no cost to your existing referral deals.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─────────────── Tiers ─────────────── -->
+<section id="tiers" class="tiers">
+  <div class="wrap">
+    <div class="section-eyebrow reveal" data-i="tiers.eyebrow">03 · Partner tiers</div>
+    <h2 class="reveal d1" data-i="tiers.h2">Start where you are.
+Grow into the tier the numbers earn.</h2>
+    <p class="lede reveal d2" data-i="tiers.lede">Every partner starts on Starter…</p>
+
+    <div class="t-grid">
+      <div class="tier reveal">
+        <div class="t-name" data-i="tiers.t1_name">Starter</div>
+        <div class="t-sub" data-i="tiers.t1_h">The default entry</div>
+        <div class="t-rate"><span data-i="tiers.t1_rate">10%</span></div>
+        <div class="t-note" data-i="tiers.t1_note">recurring revenue share</div>
+        <ul>
+          <li data-i="tiers.t1_l1">Partner dashboard from day one</li>
+          <li data-i="tiers.t1_l2">Monthly written settlement</li>
+          <li data-i="tiers.t1_l3">One joint analysis session / quarter</li>
+          <li data-i="tiers.t1_l4">No minimum audience size</li>
+        </ul>
+        <div class="t-cta">
+          <a class="btn ghost" href="https://t.me/Chartcontrolai" target="_blank" rel="noopener" data-i="nav.cta">Become a partner</a>
+        </div>
+      </div>
+
+      <div class="tier featured reveal d1">
+        <div class="badge" data-i="tiers.t2_badge">Most partners land here</div>
+        <div class="t-name" data-i="tiers.t2_name">Pro</div>
+        <div class="t-sub" data-i="tiers.t2_h">≥ 100 active members</div>
+        <div class="t-rate"><span data-i="tiers.t2_rate">15%</span></div>
+        <div class="t-note" data-i="tiers.t2_note">recurring revenue share</div>
+        <ul>
+          <li data-i="tiers.t2_l1">Everything in Starter</li>
+          <li data-i="tiers.t2_l2">Priority pair-listing requests</li>
+          <li data-i="tiers.t2_l3">Custom sub-brand on member landing</li>
+          <li data-i="tiers.t2_l4">Monthly joint session (live or recorded)</li>
+        </ul>
+        <div class="t-cta">
+          <a class="btn primary" href="https://t.me/Chartcontrolai" target="_blank" rel="noopener" data-i="nav.cta">Become a partner</a>
+        </div>
+      </div>
+
+      <div class="tier reveal d2">
+        <div class="t-name" data-i="tiers.t3_name">Elite</div>
+        <div class="t-sub" data-i="tiers.t3_h">≥ 500 active members</div>
+        <div class="t-rate"><span data-i="tiers.t3_rate">20%</span></div>
+        <div class="t-note" data-i="tiers.t3_note">recurring revenue share</div>
+        <ul>
+          <li data-i="tiers.t3_l1">Everything in Pro</li>
+          <li data-i="tiers.t3_l2">Named account manager</li>
+          <li data-i="tiers.t3_l3">Custom signal-rule packs under your handle</li>
+          <li data-i="tiers.t3_l4">Roadmap voice — priority feature review</li>
+        </ul>
+        <div class="t-cta">
+          <a class="btn dark" href="https://t.me/Chartcontrolai" target="_blank" rel="noopener" data-i="nav.cta">Become a partner</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tiers-note reveal" data-i="tiers.note">"Active" means a member who traded at least once…</div>
+  </div>
+</section>
+
+<!-- ─────────────── Revenue Calculator ─────────────── -->
+<section id="calc" class="calc-section">
+  <div class="wrap">
+    <div class="section-eyebrow reveal" data-i="calc.eyebrow">04 · Revenue calculator</div>
+    <h2 class="reveal d1" data-i="calc.h2">Model your first year.
+Then the five that follow.</h2>
+    <p class="lede reveal d2" data-i="calc.lede">Move the sliders…</p>
+
+    <div class="calc reveal d2">
+      <div class="calc-inputs">
+        <div class="calc-field">
+          <label>
+            <span data-i="calc.slider_size">Community size</span>
+            <span class="val" id="valSize">500</span>
+          </label>
+          <input type="range" id="inSize" min="50" max="10000" step="50" value="500">
+          <div class="ticks"><span>50</span><span>2,500</span><span>5,000</span><span>10,000</span></div>
+        </div>
+
+        <div class="calc-field">
+          <label>
+            <span data-i="calc.slider_active">Active traders (%)</span>
+            <span class="val" id="valActive">18%</span>
+          </label>
+          <input type="range" id="inActive" min="2" max="60" step="1" value="18">
+          <div class="ticks"><span>2%</span><span>20%</span><span>40%</span><span>60%</span></div>
+        </div>
+
+        <div class="calc-field">
+          <label>
+            <span data-i="calc.slider_vol">Avg monthly volume / trader (USDT)</span>
+            <span class="val" id="valVol">$25,000</span>
+          </label>
+          <input type="range" id="inVol" min="1000" max="500000" step="1000" value="25000">
+          <div class="ticks"><span>$1k</span><span>$100k</span><span>$250k</span><span>$500k</span></div>
+        </div>
+
+        <div class="calc-field">
+          <label><span data-i="calc.slider_tier">Tier</span><span class="val" id="valTier">Starter · 10%</span></label>
+          <div class="tier-radio">
+            <label><input type="radio" name="tier" value="10" checked><span>Starter · 10%</span></label>
+            <label><input type="radio" name="tier" value="15"><span>Pro · 15%</span></label>
+            <label><input type="radio" name="tier" value="20"><span>Elite · 20%</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="calc-outputs">
+        <div class="headline">
+          <div class="lbl" data-i="calc.out_month">Estimated monthly share</div>
+          <div class="num"><span class="cur">$</span><span id="outMonth" class="tnum">0</span></div>
+          <div class="sub" id="outMonthSub">— · 0 active traders</div>
+        </div>
+        <div class="row">
+          <div class="lbl" data-i="calc.out_year">Year 1</div>
+          <div class="num"><span class="cur">$</span><span id="outYear" class="tnum">0</span></div>
+        </div>
+        <div class="row">
+          <div class="lbl" data-i="calc.out_5y">5-year cumulative</div>
+          <div class="num"><span class="cur">$</span><span id="out5y" class="tnum">0</span></div>
+        </div>
+        <div class="calc-note" data-i="calc.out_note">Assumes flat monthly activity…</div>
+      </div>
+    </div>
+
+    <div class="calc-disclaimer" data-i="calc.disclaimer">Illustrative model, not a forecast…</div>
+  </div>
+</section>
+
+<!-- ─────────────── How it works ─────────────── -->
+<section id="how" class="how">
+  <div class="wrap">
+    <div class="section-eyebrow reveal" data-i="how.eyebrow">05 · How it works</div>
+    <h2 class="reveal d1" data-i="how.h2">Four steps between
+first reply and first payout.</h2>
+
+    <div class="timeline">
+      <div class="tl-step reveal">
+        <div class="dot"></div>
+        <div class="n" data-i="how.s1_n">Step 01</div>
+        <h4 data-i="how.s1_h">You reply on Telegram</h4>
+        <p data-i="how.s1_b">One message…</p>
+      </div>
+      <div class="tl-step reveal d1">
+        <div class="dot"></div>
+        <div class="n" data-i="how.s2_n">Step 02</div>
+        <h4 data-i="how.s2_h">Your partner link goes live</h4>
+        <p data-i="how.s2_b">Unique to your community…</p>
+      </div>
+      <div class="tl-step reveal d2">
+        <div class="dot"></div>
+        <div class="n" data-i="how.s3_n">Step 03</div>
+        <h4 data-i="how.s3_h">Members join and start trading</h4>
+        <p data-i="how.s3_b">Free points on signup…</p>
+      </div>
+      <div class="tl-step reveal d3">
+        <div class="dot"></div>
+        <div class="n" data-i="how.s4_n">Step 04</div>
+        <h4 data-i="how.s4_h">Monthly settlement, in writing</h4>
+        <p data-i="how.s4_b">Your share accrues in the dashboard…</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Revenue-share precision ─────────────── -->
+<section id="commission" class="commission">
+  <div class="wrap">
+    <div class="section-eyebrow reveal" data-i="com.eyebrow">06 · The revenue share, without ambiguity</div>
+    <h2 class="reveal d1" data-i="com.h2">What the share actually is
+— and what it is not.</h2>
+
+    <div class="precise reveal d2">
+      <div class="row ok">
+        <div class="tag" data-i="com.r1_tag">What you get</div>
+        <div class="txt" data-i="com.r1_txt" data-i-html="1">10% (Starter) → 15% (Pro) → 20% (Elite) of the exchange revenue…</div>
+      </div>
+      <div class="row no">
+        <div class="tag" data-i="com.r2_tag">Not this</div>
+        <div class="txt" data-i="com.r2_txt" data-i-html="1">It is not a share of your members' trading profits.</div>
+      </div>
+      <div class="row no">
+        <div class="tag" data-i="com.r3_tag">Not this either</div>
+        <div class="txt" data-i="com.r3_txt" data-i-html="1">It is not increased by your members' losses.</div>
+      </div>
+      <div class="row ok">
+        <div class="tag" data-i="com.r4_tag">What we charge members</div>
+        <div class="txt" data-i="com.r4_txt" data-i-html="1">Zero platform trading fee…</div>
+      </div>
+      <div class="row ok">
+        <div class="tag" data-i="com.r5_tag">Stacking</div>
+        <div class="txt" data-i="com.r5_txt" data-i-html="1">Additional income, not a replacement.</div>
+      </div>
+    </div>
+
+    <div class="precise-note reveal">
+      <span class="t" data-i="com.note_t">Payout — settled monthly, on a rail agreed in writing before your link goes live</span>
+      <p data-i="com.note_b">Your share is calculated and settled once a month…</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Boundaries ─────────────── -->
+<section id="boundaries" class="boundaries">
+  <div class="wrap">
+    <div class="section-eyebrow reveal" data-i="bd.eyebrow">07 · What neither of us should claim</div>
+    <h2 class="reveal d1" data-i="bd.h2">The one page that
+protects both of us.</h2>
+    <p class="lede reveal d2" data-i="bd.lede">Members connect real accounts and real money moves…</p>
+
+    <div class="bnd-grid">
+      <div class="bnd-col no reveal">
+        <h3 data-i="bd.no_h">Please do not say</h3>
+        <ul class="bnd-list no">
+          <li data-i="bd.no_1" data-i-html="1">That the AI predicts the market…</li>
+          <li data-i="bd.no_2" data-i-html="1">Any win rate, return, or performance figure…</li>
+          <li data-i="bd.no_3" data-i-html="1">That ChartControl manages money…</li>
+          <li data-i="bd.no_4" data-i-html="1">That members will make money…</li>
+          <li data-i="bd.no_5" data-i-html="1">That members must deposit to try the product</li>
+        </ul>
+      </div>
+      <div class="bnd-col yes reveal d1">
+        <h3 data-i="bd.yes_h">Please use these instead</h3>
+        <ul class="bnd-list yes">
+          <li data-i="bd.yes_1" data-i-html="1">The AI explains what the chart shows…</li>
+          <li data-i="bd.yes_2" data-i-html="1">Every marker carries the rule name…</li>
+          <li data-i="bd.yes_3" data-i-html="1">ChartControl is an AI analysis product…</li>
+          <li data-i="bd.yes_4" data-i-html="1">Trading involves risk…</li>
+          <li data-i="bd.yes_5" data-i-html="1">Members can start free…</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── FAQ ─────────────── -->
+<section id="faq" class="faq">
+  <div class="wrap">
+    <div class="section-eyebrow reveal" data-i="faq.eyebrow">08 · Questions partners actually ask</div>
+    <h2 class="reveal d1" data-i="faq.h2">Straight answers.</h2>
+
+    <div class="faq-grid reveal d2">
+      <details class="qa"><summary><span data-i="faq.q1">How much can I realistically earn?</span><span class="plus">+</span></summary><div class="ans" data-i="faq.a1">We refuse to invent a number…</div></details>
+      <details class="qa"><summary><span data-i="faq.q2">Is this really long-term?</span><span class="plus">+</span></summary><div class="ans" data-i="faq.a2">The revenue-share structure has no expiry…</div></details>
+      <details class="qa"><summary><span data-i="faq.q3">Do my members have to deposit or pay to start?</span><span class="plus">+</span></summary><div class="ans" data-i="faq.a3">No. Free points on signup…</div></details>
+      <details class="qa"><summary><span data-i="faq.q4">Which exchange, and what if my community is on another one?</span><span class="plus">+</span></summary><div class="ans" data-i="faq.a4">KuCoin is the only venue wired today…</div></details>
+      <details class="qa"><summary><span data-i="faq.q5">Can I keep my existing referral deals?</span><span class="plus">+</span></summary><div class="ans" data-i="faq.a5">Yes. Members connect their own exchange account…</div></details>
+      <details class="qa"><summary><span data-i="faq.q6">How do you track what I earn?</span><span class="plus">+</span></summary><div class="ans" data-i="faq.a6">Through your partner link and a dashboard…</div></details>
+      <details class="qa"><summary><span data-i="faq.q7">Do I need a large audience?</span><span class="plus">+</span></summary><div class="ans" data-i="faq.a7">No minimum audience…</div></details>
+      <details class="qa"><summary><span data-i="faq.q8">Why Telegram and email, not calls?</span><span class="plus">+</span></summary><div class="ans" data-i="faq.a8">Different time zones…</div></details>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Apply ─────────────── -->
+<section id="apply" class="apply">
+  <div class="wrap">
+    <div class="apply-grid">
+      <div class="apply-left">
+        <div class="section-eyebrow reveal" data-i="apply.eyebrow">09 · Apply</div>
+        <h2 class="reveal d1" data-i="apply.h2">One reply starts it.</h2>
+        <p class="lede reveal d2" data-i="apply.lede">Telegram is the fastest channel…</p>
+        <div class="tg-card reveal d2" style="margin-top:32px">
+          <div class="tg-h">TELEGRAM · @Chartcontrolai</div>
+          <div class="handle">Talk to us directly.</div>
+          <a class="tg-btn" href="https://t.me/Chartcontrolai" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.036 15.803l-.371 5.212c.531 0 .762-.228 1.037-.5l2.49-2.373 5.157 3.775c.945.52 1.618.246 1.87-.876l3.39-15.878c.298-1.394-.502-1.94-1.42-1.597L1.28 9.895c-1.36.531-1.34 1.293-.232 1.638l4.996 1.558 11.6-7.31c.546-.36 1.043-.16.634.2z"/></svg>
+            <span data-i="apply.f_tg">Message on Telegram</span>
+          </a>
+        </div>
+      </div>
+
+      <form class="apply-form reveal d1" id="applyForm" onsubmit="return CC.submitApply(event)">
+        <div class="row2">
+          <div class="fld"><label data-i="apply.f_name">Your name</label><input type="text" name="name" required></div>
+          <div class="fld"><label data-i="apply.f_comm">Community name</label><input type="text" name="community" required></div>
+        </div>
+        <div class="row2">
+          <div class="fld"><label data-i="apply.f_plat">Platform</label><input type="text" name="platform" data-i-ph="apply.f_plat_ph" placeholder="Telegram · Discord · YouTube · X · Other"></div>
+          <div class="fld"><label data-i="apply.f_size">Approximate audience</label>
+            <select name="size">
+              <option>&lt; 500</option><option>500 – 2,000</option><option>2,000 – 10,000</option>
+              <option>10,000 – 50,000</option><option>50,000+</option>
+            </select>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="fld"><label data-i="apply.f_link">Community link (optional)</label><input type="url" name="link" placeholder="https://"></div>
+          <div class="fld"><label data-i="apply.f_lang">Primary language</label>
+            <select name="lang" id="langAuto">
+              <option value="English">English</option><option value="Korean">한국어</option>
+              <option value="Japanese">日本語</option><option value="Chinese">中文</option>
+              <option value="Turkish">Türkçe</option><option value="Vietnamese">Tiếng Việt</option>
+              <option value="Spanish">Español</option><option value="Portuguese">Português</option>
+              <option value="Russian">Русский</option><option value="German">Deutsch</option>
+              <option value="French">Français</option><option value="Arabic">العربية</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="fld"><label data-i="apply.f_email">Email for reply</label><input type="email" name="email" required></div>
+        <div class="fld"><label data-i="apply.f_msg">Anything we should know</label>
+          <textarea name="msg" data-i-ph="apply.f_msg_ph" placeholder="One line about who your community is and what they trade."></textarea>
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn primary" data-i="apply.f_submit">Send application</button>
+          <span data-i="apply.f_or">or</span>
+          <a class="btn ghost" href="https://t.me/Chartcontrolai" target="_blank" rel="noopener" data-i="apply.f_tg">Message on Telegram</a>
+        </div>
+        <div class="sent" id="applySent" data-i="apply.sent">Mail draft opened…</div>
+        <p class="apply-note" data-i="apply.f_note">Sending the form opens your mail client…</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─────────────── Footer ─────────────── -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="brand" href="https://chartcontrol.onrender.com">
+          <span class="mark">✦</span>
+          <span class="brand-name">ChartControl</span>
+          <span class="brand-ver">Partners v2</span>
+        </a>
+        <p data-i="foot.body" data-i-html="1"><b>ChartControl is an AI product for chart-based decision making.</b>…</p>
+      </div>
+      <div>
+        <h5 data-i="foot.contact">Contact</h5>
+        <ul>
+          <li><a href="https://t.me/Chartcontrolai" target="_blank" rel="noopener" data-i="foot.tg">Telegram @Chartcontrolai</a></li>
+          <li><a href="mailto:nuhye1031@gmail.com" data-i="foot.mail">nuhye1031@gmail.com</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i="foot.product">Product</h5>
+        <ul>
+          <li><a href="https://chartcontrol.onrender.com" target="_blank" rel="noopener" data-i="foot.demo">Live demo</a></li>
+          <li><a href="https://chartcontrol.onrender.com" data-i="foot.landing">Main landing</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-i="foot.legal">Legal</h5>
+        <ul>
+          <li><a href="https://chartcontrol.onrender.com/index.html#/terms" data-i="foot.terms">Terms</a></li>
+          <li><a href="https://chartcontrol.onrender.com/index.html#/privacy" data-i="foot.privacy">Privacy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p class="copy" data-i="foot.copy">© 2026 BEOMONNURI Innovation Co., Ltd. · chartcontrol.onrender.com</p>
+    </div>
+  </div>
+</footer>
+
+<!--
+  Language scripts. Non-module, non-defer so they execute in order at parse.
+  Cache-buster query keeps browsers from serving a stale bundle on copy fixes.
+-->
+<script src="partners-i18n.js?v=4"></script>
+<script src="partners-app.js?v=4"></script>
+</body>
+</html>
