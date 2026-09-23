@@ -3,6 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- ★ 검색 색인 금지 (2026-09-23 추가)
+     이 페이지는 Genspark Design 산출물의 **디자인 시제품**이다. auth-app.js /
+     legal-app.js 에는 fetch 가 0건이어서 실제 API 에 연결되지 않는다.
+       · 로그인 폼은 비밀번호를 받아 아무 데도 보내지 않고 #/2fa 로 넘어간다
+         (성공한 것처럼 보인다). 제품이 아닌 도메인의 비밀번호 입력란이 검색에
+         노출되면 피싱과 구별되지 않는다.
+       · 약관 본문은 실제로 동의를 받는 약관(15절)과 다르다(여기는 11절).
+         공개된 약관이 두 벌이면 어느 쪽에 동의한 것인지 다툼이 된다.
+     실제 제품은 https://chartcontrol.onrender.com 이다. 랜딩의 Sign in·Terms
+     링크는 이미 그쪽을 가리킨다 — 정상 클릭 경로로는 이 페이지에 닿지 않는다.
+
+     ★★ robots.txt 로 Disallow 하지 않는다. 크롤러가 막히면 이 noindex 를
+       읽지 못해서 이미 색인된 것이 빠지지 않는다. 읽게 해서 빼야 한다.
+     ★ 이 주석과 태그는 캠페인 이후 실제 API 에 연결할 때 지운다 —
+       ChartControl/docs/HANDOFF-static-landing-site.md 참고.
+-->
+<meta name="robots" content="noindex,nofollow">
 <title>ChartControl — Legal & Policies</title>
 <meta name="description" content="ChartControl AI legal & policies: Business information, Terms of Service, Privacy Policy, Risk Disclosure, Refund Policy. Effective 2026-09-23.">
 

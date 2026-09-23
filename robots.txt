@@ -1,0 +1,28 @@
+# robots.txt — chartcontrol-landing (GitHub Pages)
+#
+# 이 사이트는 ChartControl AI 의 마케팅 페이지다. 실제 제품은
+#   https://chartcontrol.onrender.com
+# 이고, 랜딩의 Sign in · Terms · Privacy 링크는 모두 그쪽을 가리킨다.
+#
+# ★★★ 색인에서 빼야 하는 페이지를 여기서 Disallow 하지 않는다.
+#
+#   Disallow 는 "크롤링하지 말라" 는 뜻이고 noindex 는 "색인하지 말라" 는 뜻이다.
+#   Disallow 로 막으면 크롤러가 페이지를 열지 못해 <meta name="robots" content="noindex">
+#   를 **읽지 못한다.** 그러면 이미 색인된 것이 빠지지 않고, 외부 링크만으로
+#   제목 없이 검색 결과에 남는 일이 생긴다.
+#
+#   그래서 크롤링은 허용하고, 빼야 할 페이지에는 페이지 안에 noindex 를 넣었다:
+#     /login/  /legal/  /terms/  /privacy/  /risk/  /refund/
+#     ChartControl Auth.html  ChartControl Legal.html  product-preview.html
+#
+#   이 페이지들은 Genspark Design 산출물의 디자인 시제품이다. auth-app.js /
+#   legal-app.js 에 fetch 가 0건이라 실제 API 에 연결되지 않는다. 로그인 폼은
+#   비밀번호를 받아 아무 데도 보내지 않고 성공한 것처럼 2FA 화면으로 넘어간다.
+#   약관 본문도 실제로 동의를 받는 약관과 다르다.
+#
+#   캠페인(2026-10-01) 이후 실제 API 에 연결할 예정이다. 그때 noindex 를 지운다 —
+#   BEOMONNURI-Innovation 저장소의
+#   ChartControl/docs/HANDOFF-static-landing-site.md 에 방법을 적어 뒀다.
+
+User-agent: *
+Allow: /
