@@ -57,7 +57,7 @@
     return key;
   }
 
-  function applyLang(lang){
+  function applyLang(lang){ lang = 'en';
     const dict = window.CC_I18N || {};
     if (!dict[lang]) lang = DEFAULT_LANG;
 
